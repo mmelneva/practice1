@@ -7,7 +7,7 @@ return [
 
     // Database settings
     'DATABASE_HOST'     => 'db',
-    'DATABASE_NAME'     => 'test',
+    'DATABASE_NAME'     => 'task_test',
     'DATABASE_USERNAME' => 'root',
     'DATABASE_PASSWORD' => 'root',
 
