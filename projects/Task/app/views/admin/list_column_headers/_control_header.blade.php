@@ -1,0 +1,1 @@
+<div class="control">{{{ trans('interactions.controls') }}}</div>

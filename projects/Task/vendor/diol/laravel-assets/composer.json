@@ -1,0 +1,34 @@
+{
+    "name": "diol/laravel-assets",
+    "description": "",
+    "authors": [
+        {
+            "name": "Pavel Makarov",
+            "email": "pavel@diol-it.ru"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://91.193.237.57:9999/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "laravel/framework": "4.2.*",
+        "kriswallsmith/assetic": "1.2.1",
+        "diol/cssmin": "3.0.5",
+        "ptachoire/cssembed": "1.0.2",
+        "mrclay/minify": "2.2.1"
+    },
+    "autoload": {
+        "psr-0": {
+            "Diol\\LaravelAssets": "src/"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false
+    },
+    "minimum-stability": "stable"
+}

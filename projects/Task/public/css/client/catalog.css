@@ -1,0 +1,416 @@
+﻿/*
+Блок 'Каталог'
+Modified 3.12.2015
+*/
+
+ul.catalog {
+    padding: 0px;
+    margin: 0px;
+    position: relative;
+    font-size: 0px;
+}
+
+ul.catalog.ins {
+    margin: 15px 0px 0px 0px;
+}
+
+.jcarousel ul.catalog li,
+ul.catalog li,
+.reviews-swiper-container .review-one ul.catalog li
+{
+    width: 222px;
+    padding: 7px 3px;
+    margin: 0px 15px 20px 0px;
+    display: inline-block;
+    vertical-align: top;
+    position: relative;
+    list-style: none;
+    font: normal 15px/18px arial, tahoma, verdana;
+    box-shadow: 0px 0px 5px #aeaeae;
+    background: #ffffff;
+    border-bottom: 3px solid #c8c9c9;
+}
+
+.jcarousel ul.catalog.ins li,
+ul.catalog.ins li {
+    margin-right: 14px;
+}
+
+ul.catalog li:hover {
+    box-shadow: 0px 0px 10px #666666;
+    border-color: #7aade0;
+}
+[data-source-popup] [data-source-product].active {
+    background-color: #7aade0;
+}
+[data-source-popup] [data-source-product]:not(.active) {
+    background-color: #ffffff;
+    transition: background-color 2.5s ease-in-out 0s;
+    -moz-transition: background-color 2.5s ease-in-out 0s;
+    -webkit-transition: background-color 2.5s ease-in-out 0s;
+    -o-transition: background-color 2.5s ease-in-out 0s;
+}
+
+ul.catalog li .blockimg {
+    margin: 0;
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 10px;
+    position: relative;
+}
+
+ul.catalog li img {
+    max-width: 214px;
+    text-align: center;
+    vertical-align: top;
+}
+.is-products-carousel ul.catalog li img {
+    max-width: 240px;
+}
+
+ul.catalog.ins.offers li img {
+    max-width: 180px;
+}
+ul.catalog li .blockfix {
+    margin: 0px 5px;
+}
+
+ul.catalog li .block_btns {
+    margin: 0;
+    width: 100%;
+    white-space: nowrap;
+    padding-top: 2px;
+    text-align: center;
+}
+
+ul.catalog li .title, ul.catalog li .title a:link, ul.catalog li .title a:visited {
+    margin-bottom: 10px;
+    overflow: hidden;
+    font: normal 15px/18px arial, tahoma, arial;
+    color: #016dc2;
+}
+
+ul.catalog li .small-content{
+    margin-bottom: 13px;
+}
+
+ul.catalog li .small-content p{
+    margin: 0;
+}
+
+/*ul.catalog li:hover .title a:link, ul.catalog li:hover .title a:visited {
+    color: #428acd;
+}*/
+
+ul.catalog li .txt {
+    margin-bottom: 10px;
+    overflow: hidden;
+    font: normal 13px/16px arial, tahoma, arial;
+    color: #464646;
+}
+
+ul.catalog li .block_price {
+    padding-bottom: 5px;
+    /*margin-top: 15px;*/
+    /*overflow: visible;*/
+}
+/*ul.catalog li .block_price .price {*/
+    /*font-size: 20px;*/
+    /*margin-right: 0;*/
+    /*white-space: nowrap;*/
+/*}*/
+/*ul.catalog li .block_price .price.old {*/
+    /*font-size: 16px;*/
+    /*white-space: nowrap;*/
+/*}*/
+
+.price {
+    margin-right: 10px;
+    font: bold 14px/16px arial, tahoma, arial;
+    color: #443633;
+}
+
+.price.old {
+    margin-right: 0px;
+    font: bold 18px/22px arial, tahoma, arial;
+    text-decoration: line-through;
+    color: #aeaeae;
+}
+
+.btn_star {
+    width: 37px;
+    height: 37px;
+    padding: 0px;
+    margin: 0px;
+    text-decoration: none;
+    cursor: pointer;
+    background: none;
+    border: 0px;
+}
+
+.btn_star {
+    background: url(../../images/client/btn_star.png) no-repeat;
+}
+
+/*inderim*/
+.blockimg .ind {
+    display: block;
+    position: absolute;
+    top: 10px;
+    left: -5px;
+    right: -5px;
+    font-size: 0px;
+    text-align: left;
+    z-index: 10;
+}
+.block_tovs .blockimg .ind {
+    top: 10px;
+    left: 0;
+    right: 0;
+    width: 280px;
+}
+
+.blockimg .ind .angle {
+    width: 14px;
+    height: 25px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.blockimg .ind_green .angle {
+    background: url(../../images/client/ind_angle_green.png) no-repeat;
+}
+
+.blockimg .ind_pesok .angle {
+    background: url(../../images/client/ind_angle_pesok.png) no-repeat;
+}
+
+.blockimg .ind_red .angle {
+    background: url(../../images/client/ind_angle_red.png) no-repeat;
+}
+
+.blockimg .inds .txt {
+    min-width: 30px;
+    padding: 7px 5px;
+    margin-bottom: 5px;
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    font: normal 11px/11px arial, tahoma, verdana;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #ffffff;
+}
+
+.blockimg .ind_green .txt {
+    background: #00b727;
+}
+
+.blockimg .ind_pesok .txt {
+    background: #d51612;
+}
+
+.blockimg .ind_red .txt {
+    background: #b73100;
+}
+
+ul.catalog li .eye {
+    display: none;
+    position: absolute;
+    top: 50%;
+    margin-top: -15px;
+    left: 15px;
+    right: 15px;
+    font: normal 12px/12px arial, tahoma, verdana;
+    text-align: center;
+    color: #ffffff;
+    background: url(../../images/client/1x1_blue80.png) repeat;
+    border-radius: 4px;
+}
+
+ul.catalog li:hover .eye {
+    display: block;
+}
+
+ul.catalog li:hover .inds {
+    display: none;
+}
+
+ul.catalog li .inds {
+    display: block;
+}
+
+ul.catalog li .eye a:link, ul.catalog li .eye a:visited {
+    padding: 8px;
+    display: block;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+ul.catalog li .eye img {
+    margin-right: 5px;
+    vertical-align: middle;
+}
+/*end inderim*/
+
+img.no-border {
+    border: 0 !important;
+}
+
+/* Product actions container */
+.product-page .block_tovs .actions-container button {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    float: none !important;
+    height: auto;
+    margin-right: 10px;
+    min-width: 165px;
+    padding: 2px 0;
+    text-align: left;
+    width: auto;
+}
+
+.product-page .block_tovs .actions-container button span {
+    color: #000000;
+    text-decoration: underline;
+}
+
+.product-page .block_tovs .actions-container button:hover span {
+    text-decoration: none;
+}
+
+.product-page .block_tovs .actions-container button img {
+    margin-right: 5px;
+}
+
+/* Product price alignment */
+
+
+.outer {
+    display: table;
+    height: 45px;
+    overflow: hidden;
+}
+
+.middle {
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+/* pretty photo */
+div.pp_default .pp_description {
+    font: bold 14px/18px arial, tahoma, verdana;
+}
+/* END - pretty photo */
+.actions-container .btn.bask {
+    float: right !important;
+    margin-right: 0px !important;
+}
+.actions-container button {
+    margin-right: 3px !important;
+    margin-left: 0 !important;
+}
+
+.block_tovs .delivery {
+    margin-top: 15px;
+    display:  table;
+}
+.block_tovs .delivery img,
+.block_tovs .delivery div {
+    display: table-cell;
+}
+.block_tovs .delivery div {
+    text-transform: uppercase;
+    color: #2b9002;
+    font-size: 18px;
+    line-height: 28px;
+    vertical-align: middle;
+    padding-left: 10px;
+}
+.block_tovs .delivery span {
+    color: #8b1c25;
+}
+ul.catalog li .prod-info {
+    min-height: 18px;
+}
+
+ul.catalog .jq-selectbox__select {
+    width: 60px !important;
+    padding-right: 40px;
+}
+.not-found {
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+/* quick links block*/
+#quick_links ul {
+    padding: 0;
+    margin: 0;
+}
+#quick_links .body > ul {
+    margin: 5px 5px 5px 7px;
+}
+#quick_links ul li {
+    padding: 0;
+    margin: 0 0 0 5px;
+    list-style: none;
+    font: normal 13px/15px arial, tahoma, verdana;
+}
+#quick_links .body > ul > li {
+    padding: 0px 0px 0px 15px;
+    background: url(../../images/client/tire.png) 0 11px no-repeat;
+}
+#quick_links .body > ul > li.active {
+    background: url(../../images/client/tire_active.png) 0 11px no-repeat;
+}
+#quick_links ul li a,
+#quick_links ul li span {
+    min-height: 15px;
+    padding: 5px;
+    display: inline-block;
+}
+#quick_links ul li ul li {
+    list-style-type: square;
+    margin-left: 30px;
+}
+#quick_links ul li.active > a {
+    color: #016dc2;
+    text-decoration: none;
+    font-weight: bold;
+}
+#quick_links ul li ul li.active {
+    color: #016dc2;
+}
+/* END - quick links block*/
+
+.alert_block {
+    color: #bf0000;
+    margin: 20px 0;
+}
+.clear-filter {
+    line-height: 32px;
+    margin-left: 5px;
+}
+
+ul.catalog li .preorder{
+    display: block;
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    color: #ffffff;
+    z-index: 10;
+}
+
+ul.catalog li .preorder.preorder-text{
+    background-image: url("../../images/client/preorder-green-2.png");
+    background-position: 0 -19px;
+    background-repeat: no-repeat;
+    font-size: 10px;
+    font-weight: bold;
+    padding-left: 5px;
+    text-transform: uppercase;
+    width: 74px;
+    padding-top: 1px;
+}

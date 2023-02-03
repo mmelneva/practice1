@@ -1,0 +1,26 @@
+<div class="image-fields-container">
+    <?php echo Form::tbFormGroupOpen("images.{$image->id}.name"); ?>
+
+        <?php echo Form::tbLabel("images[{$image->id}][name]", trans('validation.attributes.name')); ?>
+
+        <?php echo Form::tbText("images[{$image->id}][name]", array_get($image, 'name')); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+
+    <?php echo Form::tbFormGroupOpen("images.{$image->id}.publish"); ?>
+
+            <?php echo Form::tbStateCheckbox("images[{$image->id}][publish]", trans('validation.attributes.publish'), array_get($image, 'publish', 1)); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+
+    <?php echo Form::tbFormGroupOpen("images.{$image->id}.position"); ?>
+
+        <?php echo Form::tbLabel("images[{$image->id}][position]", trans('validation.attributes.position')); ?>
+
+        <?php echo Form::tbText("images[{$image->id}][position]", array_get($image, 'position')); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+</div>

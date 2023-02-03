@@ -1,0 +1,40 @@
+﻿/*
+Блок 'Услуги'
+Modified 8.09.2015
+*/ 
+             
+.block_serv {       
+  padding: 10px 15px;
+  margin: 10px 0px 15px 0px; 
+	overflow: hidden;
+	font-size: 0px;    
+	color: #3f4950;     
+	background: #deeaf2;   
+  background: -webkit-linear-gradient(#deeaf2, #cddde6); background: -moz-linear-gradient(#deeaf2, #cddde6); background: -ms-linear-gradient(#deeaf2, #cddde6); background: -o-linear-gradient(#deeaf2, #cddde6); background: linear-gradient(#deeaf2, #cddde6);  
+}          
+.block_serv .serv {
+  width: 35%; 
+	min-width: 188px; 
+  padding: 5px 0px;  
+  display: inline-block;
+  vertical-align: top;      
+  font: normal 13px/18px arial, tahoma, verdana;  
+}
+.block_serv a:link, .block_serv a:visited {  
+	color: #3f4950;     
+}          
+.block_serv .blockimg {   
+  width: 30px;  
+  margin: 0px 5px 0px 0px; 
+	float: left;   
+	text-align: center;                  
+	text-decoration: none;           
+}        
+.block_serv.ins img {  
+	vertical-align: top;
+}   
+.block_serv .txt {   
+  text-align: left;  
+	text-decoration: none;  
+	white-space: nowrap;
+}           

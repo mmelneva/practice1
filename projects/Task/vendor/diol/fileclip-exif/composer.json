@@ -1,0 +1,43 @@
+{
+    "name": "diol/fileclip-exif",
+    "type": "library",
+    "description": "Extension for fileclip to set exif for attachments.",
+    "keywords": ["exif", "fileclip", "laravel", "eloquent"],
+    "authors": [
+        {
+            "name": "Pavel Makarov",
+            "email": "pavel.makarov@diol-it.ru",
+            "role": "Developer"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://office.diol-it.ru:9999/"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "diol/fileclip": "3.*",
+        "diol/pel": "1.0.*"
+
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "mockery/mockery": "0.9.*",
+        "orchestra/testbench": "2.2.*",
+        "ext-exif": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Diol\\FileclipExif\\": "src/Diol/FileclipExif",
+            "Diol\\FileclipExifTests\\": "tests"
+        }
+    },
+    "config": {
+        "preferred-install": "dist",
+        "secure-http": false
+    },
+    "minimum-stability": "stable"
+}

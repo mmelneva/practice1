@@ -1,0 +1,100 @@
+﻿/*
+Блок 'Ползунок Диапазон'
+Modified 8.09.2015
+*/
+
+.block_slider_range {
+  width: 100%;   
+	margin: 60px 0px 20px 0px;          
+  display: block; 
+}      
+.drugimg_left {
+  height: 5px;
+  position: relative;
+  /*background: url(../images/slider_range/drugimg.gif) no-repeat;*/
+}
+.drugimg_right {
+  height: 5px;
+  position: relative;
+  /*background: url(../images/slider_range/drugimg.gif) top right no-repeat;*/
+}
+.ui-slider {
+  height: 5px;
+  margin: 20px 5px 20px 0px;
+	position: relative;
+	cursor: pointer;        
+	/*box-shadow: inset 1px 1px 0px #9299a0;*/  
+	background: #7b7b7b;     
+  border: 0px;          
+	border-radius: 4px;   
+}
+.ui-slider .ui-slider-handle {
+	width: 12px;
+	height: 21px;
+	padding: 0px;
+  margin-left: -3px;
+	position: absolute;
+  top: -8px;
+  left: 0px;       
+	cursor: pointer;                                              
+	/*background: #00ffea;*/  
+  background: url(../images/slider_range/handler.png) no-repeat; 
+	/*border-radius: 100%;   	
+  behavior: url(PIE.htc);*/
+	z-index: 2;
+}
+.ui-slider .ui-slider-range {
+  height: 100%;
+	position: absolute;
+  top: 0px;
+  right: 0px;
+  left: 0px;      
+	box-shadow: inset 1px 1px 0px #398a5c;  
+	background: #10a2ff;                  
+	border-radius: 3px 0px 0px 3px;   	
+	z-index: 1;  
+}     
+.block_cost {               
+	position: absolute;
+	top: -44px;
+	left: 0px;     
+}     
+.txt_cost {              
+  margin-left: 5px;
+  position: relative;
+  font: normal 14px/30px arial, tahoma, verdana;    
+}   
+.txt_cost.b {     
+	left: 116px;
+}  
+.txt_cost.c {  
+	left: 230px;
+}     
+.txt_cost.d {      
+	left: 345px;
+}      
+.txt_cost.e {  
+  float: right;
+}    
+.cost_tire {  
+  width: 16px;  
+  height: 30px; 
+	margin: 0px 5px;
+  /*background: url(../images/filters/tire.png) center center no-repeat;*/
+}    
+input[type="text"].cost {    
+	width: 57.5px;
+	height: 30px;         
+	padding: 0px 10px;
+  margin: 0px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;                           
+  font: normal 15px/30px arial, tahoma, verdana;   
+	text-align: left;
+  color: #353535;
+  /*box-shadow: inset 2px 2px 2px #c0c8d3;*/ 
+  background: #ffffff;
+  border: 1px solid #d3dade;
+  /*border-radius: 30px;*/
+}  

@@ -1,0 +1,19 @@
+<?php $__env->startSection('main_menu_class', 'closed'); ?>
+
+<?php $__env->startSection('second_column'); ?>
+    <?php echo HTML::additionalMenuOpen(['resize' => 'catalog-categories']); ?>
+
+        <div class="menu-wrapper">
+            <div class="menu-header"><a href="<?php echo e(action('App\Controllers\Admin\CatalogCategoriesController@getIndex')); ?>">Каталог товаров</a></div>
+            <div class="menu-sub-header">
+                <a href="<?php echo e(action('App\Controllers\Admin\CatalogCategoriesController@getCreate')); ?>" class="btn btn-success btn-xs">Добавить категорию</a>
+            </div>
+            <?php echo $__env->make('admin.catalog_categories._category_list_menu', array('categoryTree' => $categoryTree, 'lvl' => 0, 'current_category' => isset($category) ? $category : null), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="menu-footer">
+                <a href="<?php echo e(action('App\Controllers\Admin\CatalogCategoriesController@getCreate')); ?>" class="btn btn-success btn-xs">Добавить категорию</a>
+            </div>
+        </div>
+    <?php echo HTML::additionalMenuClose(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

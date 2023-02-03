@@ -1,0 +1,36 @@
+﻿/*
+Блок 'Поиск"
+Modified 8.09.2015
+*/
+          
+form.search {  
+  width: 230px;  
+	height: 100%;
+  padding: 0px;
+  margin: 0px; 
+	border: 0px;       
+	background: url(../images/search.jpg) repeat-y;
+}       
+form.search input[type="text"] {    
+  width: 165px;
+  height: 40px;
+  padding: 0px 50px 0px 15px;
+  margin: 0px;
+  font: normal 12px/40px arial, tahoma, verdana;
+  color: #606060;
+	background: none;
+  border: 0px;    
+}       
+form.search input[type="submit"] {
+  width: 30px;
+  height: 30px;
+  padding: 0px;
+  margin: 0px;
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  font-size: 0px;
+  cursor: pointer;
+	background: url(../images/btn_loop.png) right center no-repeat;
+  border: 0px;
+}            

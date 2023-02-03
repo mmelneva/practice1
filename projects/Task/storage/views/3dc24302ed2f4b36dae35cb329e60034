@@ -1,0 +1,13 @@
+<?php /* Control block for exact category in list */ ?>
+
+<a class="glyphicon glyphicon-pencil"
+   title="<?php echo e(trans('interactions.edit')); ?>"
+   href="<?php echo e(action('App\Controllers\Admin\CatalogCategoriesController@getEdit', [$category->id])); ?>"></a>
+<a class="glyphicon glyphicon-list"
+   href="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@getIndex', [$category->id])); ?>"
+   title="Товары"></a>
+<a class="glyphicon glyphicon-trash"
+   title="<?php echo e(trans('interactions.delete')); ?>"
+   data-method="delete"
+   data-confirm="Вы уверены, что хотите удалить данную категорию?"
+   href="<?php echo e(action('App\Controllers\Admin\CatalogCategoriesController@deleteDestroy', [$category->id])); ?>"></a>

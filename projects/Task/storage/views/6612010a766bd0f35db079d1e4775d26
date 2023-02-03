@@ -1,0 +1,24 @@
+<ul class="element-list" data-sortable-group="">
+    <?php foreach($categoryTree as $category): ?>
+        <li data-element-id="<?php echo e($category->id); ?>">
+            <div class="element-container">
+                <?php echo $__env->make('admin.resource_list_sortable._list_sorting_controls', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="name">
+                    <a href="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@getIndex', [$category->id])); ?>"
+                       style="margin-left: <?php echo e($lvl * 0.5); ?>em;"><?php echo e($category->name); ?></a>
+                </div>
+                <div class="position"><?php echo e($category->position); ?></div>
+                <?php echo $__env->make('admin.shared._list_flag', ['element' => $category, 'action' => action('App\Controllers\Admin\CatalogCategoriesController@putToggleAttribute', [$category->id, 'publish']), 'attribute' => 'publish'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php echo $__env->make('admin.shared._list_flag', ['element' => $category, 'action' => action('App\Controllers\Admin\CatalogCategoriesController@putToggleAttribute', [$category->id, 'top_menu']), 'attribute' => 'top_menu'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php echo $__env->make('admin.shared._list_flag', ['element' => $category, 'action' => action('App\Controllers\Admin\CatalogCategoriesController@putToggleAttribute', [$category->id, 'use_reviews_associations']), 'attribute' => 'use_reviews_associations'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="alias"><?php echo e($category->alias); ?></div>
+                <div class="control">
+                    <?php echo $__env->make('admin.catalog_categories._category_control_block', ['category' => $category], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div>
+            <?php if(count($category->children) > 0): ?>
+                <?php echo $__env->make('admin.catalog_categories._category_list', ['categoryTree' => $category->children, 'lvl' => $lvl + 3], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

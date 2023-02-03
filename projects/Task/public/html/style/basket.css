@@ -1,0 +1,394 @@
+﻿/*
+Блок 'Корзина'
+Modified 8.09.2015
+*/
+
+/*basket*/
+header .basket {   
+  width: 165px;
+	float: right;  
+	position: absolute;
+	top: 0px;
+	right: 0px;
+  font: normal 14px/20px arial, tahoma, verdana;      
+}       
+header#scrl .basket { 
+  width: 120px;  
+  font: normal 12px/16px arial, tahoma, verdana;  
+	top: -9px;    
+}
+header .basket .body {   
+  padding: 9px 0px 0px 55px;                        
+}    
+header#scrl .basket .body {   
+  padding: 9px 0px 0px 35px;                        
+}                
+header .num {    
+  width: 25px;
+	height: 25px;    
+	position: absolute;
+	top: 0px;
+	left: 35px;
+  font: normal 13px/25px arial, tahoma, verdana;
+	text-align: center; 
+  color: #ffffff;
+  background: #227f71;
+	border-radius: 100%;   
+}            
+header .basket .num {
+	top: 20px;
+	left: 55px;        
+}                 
+header .basket > a:link, header .basket > a:visited {   
+  padding: 0px;
+  display: block;
+  text-decoration: none;
+  cursor: pointer;     
+  color: #ffffff;                             
+}                     
+header .basket > a.active:link, header .basket > a.active:visited {     
+  position: relative;
+	z-index: 10;          
+}        
+header .basket > a:link .bask, header .basket > a:visited .bask {
+  width: 50px;
+	height: 50px;
+	padding: 0px;  
+  display: block;
+  position: absolute;
+	top: 10px;
+	left: 0px;
+	text-decoration: none;  
+	background: url(../images/basket.png) no-repeat;
+}         
+header#scrl .basket > a:link .bask, header#scrl .basket > a:visited .bask {
+  width: 25px;
+	height: 20px;   
+	top: 12px;
+	background: url(../images/basket_scrl.png) no-repeat;
+}                 
+/*header .basket > a.active .bask {                     
+	background-position: 0px -50px;
+}*/                            
+header .basket .arrow_click, header .basket a.arrow_click:link, header .basket a.arrow_click:visited {
+  width: 10px;
+  height: 7px;
+  padding: 0px;
+	margin-left: 5px;
+  display: block;  
+  position: relative;
+  top: 8px;  
+	/*background: url(../images/arrow_sel.png) no-repeat;*/
+}                      
+/*header .basket a.active:link .arrow_click,
+header .basket a.active:visited .arrow_click {  
+	background: url(../images/arrow_sel_white.png) no-repeat;
+}*/                   
+header .basket a:link .tov span, header .basket a:visited .tov span {     
+  margin-bottom: 3px;
+	display: block;
+  font: bold 16px/20px arial, tahoma, verdana;  
+  color: #00f6ff;
+  border-bottom: 1px dotted #00f6ff;
+}                     
+header#scrl .basket a:link .tov span, header#scrl .basket a:visited .tov span {    
+  font: normal 12px/16px arial, tahoma, verdana;    
+}                
+header .basket a.active:link .tov span, header .basket a.active:visited .tov span {   
+  color: #ffffff;  
+  border-bottom-color: transparent;
+}        
+header .basket a:hover span {
+  border-bottom-color: transparent !important;    
+}      
+header .basket a.active:hover span {
+  border-bottom-color: #ffffff !important;   
+}        
+
+/*block_basketslide*/
+.block_basketslide {
+  width: 384px;
+  display: none;   
+  position: absolute;
+  top: 100px;  
+  right: 5px;                                       
+  z-index: 1;
+}                 
+.block_basketslide .basket_top {     
+  width: 380px;
+  height: 135px;       
+  position: absolute;
+  top: -105px; 
+	right: 6px;  
+	left: 6px;
+	/*background: url(../images/basket_top.png) no-repeat;*/ 
+	z-index: 1; 
+}               
+.block_basketslide .body {      
+  width: auto !important;   
+  height: auto !important;   
+  padding: 10px !important;
+  margin: 14px 5px 5px 5px !important;
+  position: relative;          
+  font: normal 14px/18px arial, tahoma, verdana;
+  box-shadow: 0px 0px 5px #959595;
+  background: #ffffff;
+  border: 1px solid #abb0b7;
+  /*border-radius: 4px;*/ 
+}                    
+.block_basketslide .arrow_basketslide {
+  width: 23px;
+  height: 14px;
+  position: absolute;
+  top: 1px;
+  right: 30px;
+	/*background: url(../images/arrow_basketslide.png) center top no-repeat;*/
+  z-index: 1;
+}
+.block_basketslide .inside .row {
+  padding: 10px 0px 0px 0px;
+  overflow: hidden;
+  border-top: 1px solid #c5d0cf;
+}
+.block_basketslide .inside .row:first-child {
+  border: 0px;
+}
+.block_basketslide .inside .block_close {
+  width: 40px;
+	margin-left: 10px;
+  float: right;
+}      
+.block_basketslide .inside .block_close a.close:link, .block_basketslide .inside .block_close a.close:visited {
+  width: 31px;
+  height: 31px;
+  padding: 0px;
+  display: block;
+  position: relative;
+  top: 20px;
+  font: normal 14px/31px arial, tahoma, verdana;
+  text-decoration: none;
+  /*background: url(../images/close_lit.png) no-repeat;*/
+}   
+.block_basketslide .inside .blockimg {    
+  width: 80px;
+  margin-right: 10px;
+  float: left;
+}
+.block_basketslide .inside .blockimg img {
+  max-width: 80px;
+  vertical-align: top;
+}
+/*.block_basketslide .inside .blockimg img:hover {
+  box-shadow: 0px 0px 5px #959595;
+}*/
+.block_basketslide .inside .title, .block_basketslide .inside .title a:link, .block_basketslide .inside .title a:visited {
+  padding: 0px;
+	margin-bottom: 5px;
+  font: normal 14px/18px arial, tahoma, verdana;
+  color: #259080;
+}
+.block_basketslide .inside .txt {
+  font: normal 11px/14px arial, tahoma, verdana;
+  color: #626262;
+}
+.block_basketslide .inside .price {  
+	margin: 5px 0px 15px 0px;  
+  font: bold 21px/21px arial, tahoma, verdana;
+	color: #393939;
+} 
+.block_basketslide .inside .row.total {
+  font: normal 14px/18px arial, tahoma, verdana;
+}
+.block_basketslide .inside .row.total .right {
+  font: normal 16px/18px arial, tahoma, verdana;
+}       
+.block_basketslide .inside .row.total .btn_green {   
+  width: 100%;
+  display: block;
+}  
+/*end block_basketslide*/  
+
+/*basket page*/ 
+form.bask_ord, form.bask_ord fieldset {
+  padding: 0px;
+	margin: 0px;
+	border: 0px;
+}            
+form.bask_ord fieldset.bord {        
+  padding-bottom: 15px;
+	margin-bottom: 15px;
+  border-bottom: 1px solid #b5c3cb;
+} 
+.basket_table .cell_opis {      
+  width: 42%;    
+	padding: 10px 10px 10px 0px;                   
+}     
+.basket_table td.cell_opis {   
+	padding: 10px 10px 0px 0px;    
+}               
+.basket_table .cell_close {   
+  width: 50px;              
+	text-align: center; 
+}          
+.basket_table .cell_price {  
+  font: bold 24px/28px arial, tahoma, verdana;  
+	white-space: nowrap; 
+  color: #000000;   
+}      
+.basket_table .cell_price.summ {      
+  color: #c20133;   
+}             
+.basket_table .cell_space {    
+  width: 20px;
+	padding: 0px;                         
+}          
+.basket_table th.cell_space {   
+	border-bottom: 2px solid #99a4aa;
+}             
+.basket_table tr td {         
+  font: normal 13px/18px arial, tahoma, verdana;    
+  border-top: 1px solid #b5c3cb;  
+}        
+.basket_table td.cell_space {    
+  border-color: transparent;   
+}     
+.basket_table tr:nth-child(2) td {         
+  border-top: 0px;
+}   
+.basket_table tr:last-child td {         
+  border-bottom: 4px solid #c8c9c9;
+}           
+#poporder_fast .popup .basket_table tr:nth-child(2) td {    
+  border-top: 1px solid #e5e5e9;  
+}      
+#poporder_fast .popup .basket_table tr:first-child td {         
+  border-top: 0px;
+}  
+.basket_table tr .blockimg {
+  width: 130px; 
+	margin-right: 15px;
+	float: left;
+}       
+.basket_table tr .blockimg img {
+  max-width: 130px;
+	max-height: 90px;                 
+}    
+.basket_table tr .title, .basket_table tr .title a:link, .basket_table tr .title a:visited {      
+	color: #087cfe;
+}           
+.basket_table tr .tit, .basket_table tr .tit a:link, .basket_table tr .tit a:visited {   
+  margin-bottom: 10px;  
+  font: normal 20px/23px arial, tahoma, verdana;     
+	color: #a3a1ad;
+}  
+.basket_table .txt {
+  position: relative;
+	top: 1px;
+}     
+.basket_table .sidecenter.pad {
+  overflow: visible;
+	padding: 28px 0px 0px 145px;
+} 
+.basket_table tfoot td {   
+  background: url(../images/table_down.jpg) repeat;  
+	border: 0px;
+}       
+.row_total {    
+  padding: 10px 0px;
+	margin-bottom: 30px;
+  overflow: hidden;  
+  font: bold 26px/30px arial, tahoma, verdana;   
+	text-align: right;
+	color: #465157;               
+}   
+
+/*block_order*/   
+.block_order .rowblock {   
+  margin-bottom: 10px;  
+  font: normal 14px/18px arial, tahoma, verdana;    
+}                 
+.block_order .rowblock.pad {
+  padding-top: 10px;
+}                   
+.block_order .row {
+  margin: 5px 0px;
+}                  
+.popup .block_order .row {
+  margin: 0px;
+}          
+.block_order .side {
+  width: 25%;
+  float: left;     
+}     
+.block_order .side.marg {  
+  margin-right: 40px;  
+}    
+.block_order .leftside {
+  display: block;
+  margin-bottom: 5px;                          
+}     
+input[type="text"], input[type="password"] {
+	width: 265px;
+	height: 30px;
+	padding: 0px 10px;
+  margin: 0px 0px 15px 0px;
+  overflow: hidden;
+  display: inline-block;
+  position: relative;
+  font: normal 14px/30px arial, tahoma, verdana;
+  color: #353535;
+  /*box-shadow: inset 2px 2px 2px #dedfdf;*/
+  background: none;   
+  border: 1px solid #b2c1c8;    
+  /*border-radius: 30px;*/
+}       
+textarea {
+	width: 284px;
+	min-height: 90px;
+  max-height: 600px;
+	padding: 5px 10px;
+  margin-bottom: 15px;
+  resize: vertical;
+  overflow: hidden;     
+  font: normal 14px/18px arial, tahoma, verdana;
+  color: #353535;
+  /*box-shadow: inset 2px 2px 2px #dedfdf;*/  
+  background: #ffffff;
+  /*background: -webkit-linear-gradient(#f0f4f7, #ffffff); background: -moz-linear-gradient(#f0f4f7, #ffffff); background: -ms-linear-gradient(#f0f4f7, #ffffff); background: -o-linear-gradient(#f0f4f7, #ffffff); background: linear-gradient(#f0f4f7, #ffffff);*/  
+  border: 1px solid #b2c1c8;  
+}   
+form.bask_ord.lim textarea.longer {   
+	width: 98%;  
+	min-height: 120px;
+}          
+input[type="text"]:focus, input[type="password"]:focus,
+textarea:focus {        
+	border: 2px solid #0085d7;
+}   
+input[type="text"]:focus, input[type="password"]:focus {    
+	width: 263px;  
+  height: 28px; 
+}                   
+textarea:focus {  
+	width: 282px; 
+	min-height: 88px;
+  max-height: 598px;
+}     
+textarea.longer:focus {
+	width: 926px; 
+}                    
+.block_order .star {
+  font: normal 20px/20px arial, tahoma, verdana;
+	position: relative;
+	top: 3px;       
+  color: #ff1200;
+}            
+.block_order .txt_sub {  
+  font: normal 12px/58px arial, tahoma, verdana;  
+}    
+form.bask_ord.lim .btn.marg {
+  margin-right: 10px;
+}        
+/*end block_order*/
+/*end basket page*/          
+/*end basket*/

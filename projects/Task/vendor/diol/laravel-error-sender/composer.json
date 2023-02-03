@@ -1,0 +1,32 @@
+{
+    "name": "diol/laravel-error-sender",
+    "description": "Error sender for Laravel 4.2",
+    "authors": [
+        {
+            "name": "Andrey Pokoev",
+            "email": "andrej.pokoev@diol-it.ru"
+        }
+    ],
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "http://office.diol-it.ru:9999/"
+        }
+    ],
+    "require": {
+        "ext-json": "*",
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*",
+        "illuminate/exception": "4.2.*",
+        "diol/laravel-mailer": "1.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "Diol\\LaravelErrorSender": "src/"
+        }
+    },
+    "config": {
+        "secure-http": false
+    },
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,81 @@
+.product-association-container {
+    margin-top: 1em;
+    padding-bottom: 1em;
+}
+
+.product-association-container .product-name {
+    border-bottom: 1px transparent;
+}
+
+.product-association-container .process {
+    margin-left: 0.5em;
+}
+
+.product-association-container .product-type-page .element-checkbox:checked + .product-name,
+.product-association-container .manual .element-checkbox:checked + .product-name,
+.product-association-container .filtered .product-name {
+    border-bottom: 1px dashed;
+    cursor: pointer;
+}
+
+.product-association-container .product-type-page .element-checkbox:checked + .product-name:hover,
+.product-association-container .manual .element-checkbox:checked + .product-name:hover,
+.product-association-container .filtered .product-name:hover {
+    border-bottom-color: transparent;
+}
+
+.product-association-container .association {
+    padding: 0 17px 10px;
+    display: none;
+}
+
+.product-association-container .association.visible {
+    display: block;
+}
+
+.product-association-container .tab {
+    display: none;
+}
+
+.product-association-container .tab.active {
+    display: block;
+}
+
+
+
+.product-association-container .filtered .show-hide-products {
+    display: inline-block;
+    cursor: pointer;
+    border-bottom: 1px dashed;
+    font-weight: bold;
+}
+
+.product-association-container .filtered .show-hide-products:hover {
+    border-bottom-color: transparent;
+}
+
+.product-association-container .filtered .products {
+    display: none;
+    padding-top: 0.5em;
+}
+
+.product-association-container .filtered .products.visible {
+    display: block;
+}
+
+.product-association-container .filtered .update-products-container {
+    color: red;
+    margin-bottom: 0.5em;
+    display: none;
+}
+.product-association-container .filtered .update-products-container.visible {
+    display: block;
+}
+
+.product-association-container .filtered .filter-query-hint {
+    color: gray;
+    font-size: 0.9em;
+}
+#product-type-pages .product-association-container {
+    margin-top: 0;
+}

@@ -1,0 +1,24 @@
+<?php /* One level of main menu */ ?>
+<ul>
+    <?php foreach($menu_lvl as $menu_element): ?>
+        <?php if(isset($menu_element['elements'])): ?>
+            <li class="element-group-wrapper <?php if($menu_element['active']): ?> active <?php endif; ?>">
+                <span class="menu-element">
+                    <span class="decoration"><?php echo e($menu_element['name']); ?></span>
+                    <span class="glyphicon <?php echo e($menu_element['icon']); ?>" title="<?php echo e($menu_element['name']); ?>" data-toggle="tooltip" data-placement="right"></span>
+                </span>
+
+                <div class="element-group">
+                    <?php echo $__env->make('admin.layouts._main_menu_lvl', ['menu_lvl' => $menu_element['elements']], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </li>
+        <?php else: ?>
+            <li>
+                <a href="<?php echo e($menu_element['link']); ?>" class="menu-element <?php if($menu_element['active']): ?> active <?php endif; ?>">
+                    <span class="text"><?php echo e($menu_element['name']); ?></span>
+                    <span class="glyphicon <?php echo e($menu_element['icon']); ?>" title="<?php echo e($menu_element['name']); ?>" data-toggle="tooltip" data-placement="right"></span>
+                </a>
+            </li>
+        <?php endif; ?>
+    <?php endforeach; ?>
+</ul>

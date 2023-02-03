@@ -1,0 +1,330 @@
+﻿/*
+Блок 'Навигация с картинками. Выпадающее меню на JS'
+Modified 8.09.2015
+*/
+
+.block_barmain {
+  min-height: 120px; 
+	color: #ffffff; 
+	background: #caedff url(../images/barmain/bgs.png) center top repeat-x;  
+}         
+.block_barmain.nobg {    
+	background: url(../images/barmain/bgs.png) center top repeat-x;  
+}     
+.block_barmain.imgs {   
+  padding: 0px;
+  margin: 25px 0px;   
+	color: #353535; 
+	background: none;     
+}       
+.block_barmain.imgs .carcas {   
+  padding: 0px 0px 30px 0px;   
+	border-bottom: 1px solid #d3dade;
+}                                                                                          
+ul.barmain {  
+  padding: 0px;
+  margin: 0px; 
+	position: relative;     
+  font-size: 0px;
+	text-align: center;
+}                                                                                          
+.block_barmain.imgs ul.barmain {  
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+}
+ul.barmain li {   
+  width: 11.5%;   
+  padding: 0px;
+  margin: 0px 0px 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  position: relative;
+  font: bold 13px/15px arial, tahoma, verdana;
+  text-align: center;  
+}      
+.block_barmain.imgs ul.barmain li {        
+  width: auto;
+  display: table-cell;
+  font: bold 18px/22px arial, tahoma, verdana;  
+  text-align: center !important;   
+}          
+ul.barmain li:first-child {   
+  margin: 0px;   
+}          
+ul.barmain li.last {   
+  text-align: right;
+}
+ul.barmain > li a:link, ul.barmain > li a:visited {    
+  padding: 0px;
+  display: block; 
+	text-decoration: none;
+	color: #ffffff;  
+}  
+header ul.barmain > li a:link, header ul.barmain > li a:visited { 
+  height: 75px;
+  padding: 10px 0px 0px 0px;   
+}  
+.block_barmain.imgs ul.barmain li a:link, .block_barmain.imgs ul.barmain li a:visited {  
+	color: #0071c8;     
+}     
+/*ul.barmain li:first-child a:link,
+ul.barmain li:first-child a:visited {
+  border: 1px solid #176bac;
+  border-radius: 6px 0px 0px 6px;
+  behavior: url(PIE.htc);
+}*/         
+ul.barmain li a:hover .txt {  
+	text-decoration: underline;
+}        
+.block_barmain.imgs ul.barmain li .txt {  
+	text-decoration: underline;     
+}     
+.block_barmain.imgs ul.barmain li a:hover .txt {   
+	text-decoration: none !important;
+}      
+ul.barmain li img {
+  position: relative;
+  top: 0px;
+  vertical-align: top;
+}   
+ul.barmain li .block_icons {   
+  width: 50px;               
+  margin: 0px auto;  
+}         
+ul.barmain li .ico {    
+  width: 130px;
+  height: 30px;   
+	padding-bottom: 3px;
+	display: table-cell;
+  margin: 0px auto;
+	vertical-align: bottom;
+	text-align: center; 
+}        
+.block_barmain.imgs ul.barmain li .ico {    
+  width: 145px;
+  height: 145px;   
+	display: block;  
+}   
+/*ul.barmain li:first-child .ico, ul.barmain li.last .ico {  
+  width: 80px;
+}*/  
+ul.barmain li .ico div {   
+  margin: 0px auto;      
+}      
+ul.barmain li .ico.a div {   
+  width: 29px;
+	height: 25px;
+  background: url(../images/barmain/1.png) center top no-repeat;  
+}          
+ul.barmain li .ico.b div {   
+  width: 27px;
+	height: 20px;
+  background: url(../images/barmain/2.png) center top no-repeat; 
+}    
+ul.barmain li .ico.c div {   
+  width: 27px;
+	height: 22px;
+  background: url(../images/barmain/3.png) center top no-repeat; 
+}     
+ul.barmain li .ico.d div {   
+  width: 27px;
+	height: 26px;
+  background: url(../images/barmain/4.png) center top no-repeat; 
+} 
+ul.barmain li .ico.e div {   
+  width: 29px;
+	height: 25px;
+  background: url(../images/barmain/5.png) center top no-repeat; 
+}   
+ul.barmain li .ico.f div {   
+  width: 31px;
+	height: 18px;
+  background: url(../images/barmain/6.png) center top no-repeat; 
+}   
+ul.barmain li .ico.g div {   
+  width: 27px;
+	height: 27px;
+  background: url(../images/barmain/7.png) center top no-repeat; 
+}                
+ul.barmain li .ico.h div {   
+  width: 27px;
+	height: 27px;
+  background: url(../images/barmain/8.png) center top no-repeat; 
+}          
+ul.barmain li a.actived .ico.b div {  
+  background-position: 0px -20px;  
+}     
+ul.barmain li a.actived .ico.c div {  
+  background-position: 0px -22px;  
+}        
+ul.barmain li a.actived .ico.d div {  
+  background-position: 0px -26px;  
+}   
+ul.barmain li a.actived .ico.a div,
+ul.barmain li a.actived .ico.e div {  
+  background-position: 0px -25px;  
+}    
+ul.barmain li a.actived .ico.f div {  
+  background-position: 0px -18px;  
+}  
+ul.barmain li a.actived .ico.g div,
+ul.barmain li a.actived .ico.h div {  
+  background-position: 0px -27px;  
+}    
+ul.barmain li.active a:link, ul.barmain li.active a:visited {  
+  color: #ec003d;  
+}                               
+/*end barmain*/   
+
+/*Выпадающее меню*/   
+.submenu {
+	padding: 0px;
+	margin: 0px;      
+	display: none;
+	position: absolute;
+	top: 85px;
+	left: 0px;
+	right: 0px;
+	border: 0px;  
+}
+.submenu .body {  
+	padding: 20px 0px;    
+  position: relative;    
+	text-align: center;
+  box-shadow: 0px 0px 10px #666666; 
+	background: #ffffff;   
+}
+.submenu .carcas {
+	width: 920px;
+	margin: 0px auto;
+	position: relative;
+}  
+.submenu .block_uls {
+  width: 23%;      
+	margin: 0px 0px 0px 20px;
+	display: inline-block;    
+	text-align: left; 
+} 
+.submenu .block_uls:first-child {
+  margin: 0px;
+}                  
+.submenu .block_uls .title, .submenu .block_uls .title a:link, .submenu .block_uls .title a:visited {      
+  margin-bottom: 10px;
+	font: bold 15px/18px arial, tahoma, verdana;
+	text-decoration: none;
+	color: #002942;
+}                  
+.submenu ul li .title a:hover { 
+	font: bold 15px/18px arial, tahoma, verdana;
+	text-decoration: none;
+	color: #002942;
+}                 
+.submenu ul {
+	width: 100%;
+	max-width: 230px;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	vertical-align: top;  
+}  
+.submenu ul.dhidden {
+  visibility: hidden;
+}      
+.submenu ul li {
+	padding: 0px 0px 0px 15px;
+	margin: 5px 0px 0px 0px;
+	list-style: none;
+	font: normal 14px/18px arial, tahoma, verdana;      
+	background: url(../images/tire.png) 0 9px no-repeat;
+}
+.submenu ul li a:link,
+.submenu ul li a:visited {
+	text-decoration: underline;
+	color: #016dc2;
+}
+.submenu ul li a:hover {
+  text-decoration: none;
+}
+.submenu ul li a.active {
+  font-weight: bold;   
+}            
+ul.barmain > li a.actived:link, ul.barmain > li a.actived:visited {   
+  color: #333333;    
+  box-shadow: 0px 0px 10px #666666; 
+	background: #ffffff;     
+}   
+ul.barmain > li:hover a.actived .txt {
+  text-decoration: none;
+}                            
+ul.barmain > li a.actived .decor {   
+  height: 18px;
+  position: absolute; 
+	right: 0px;
+	bottom: -5px;  
+	left: 0px;
+  background: #ffffff;  
+	z-index: 60;
+}     
+/*end Выпадающее меню*/  
+
+/*mrgray*/    
+.mrgray {
+  padding: 50px 0px 15px 0px;
+}  
+.mrgray > div {   
+  width: 15%;  
+	margin-left: 5px;  
+  display: table-cell;
+  vertical-align: top;  
+  font: bold 14px/20px arial, tahoma, verdana;         
+}             
+.mrgray > div:first-child {    
+  width: 10%;  
+  margin: 0px;
+  text-align: left;
+}          
+.mrgray > div:last-child {   
+  width: 10%;  
+  text-align: right;
+}           
+.mrgray a:link, .mrgray a:visited { 
+	padding: 0px;               
+	text-decoration: none;  
+  color: #333333;  
+}       
+.mrgray span {
+  display: inline-block;
+  vertical-align: middle; 
+}                            
+.mrgray .txt, .mrgray a:hover span {
+  text-decoration: underline;
+}                          
+.mrgray a:hover .txt {
+  text-decoration: none;
+}    
+.mrgray .tcell {
+	height: 85px; 
+	display: table-cell;
+  vertical-align: middle;
+}        
+.mrgray span.img {
+  width: 40px;
+	height: 40px;    
+  margin: 0px 10px 0px 0px;  
+	text-decoration: none !important;   
+	vertical-align: middle;  
+	box-shadow: 0px 0px 1px #ffffff;              
+  background: url(../images/bgs_mr.png) no-repeat;                 
+	border-radius: 100%;    
+}             
+.mrgray span.img:first-child {
+  margin-left: 0px; 
+}             
+.mrgray span.img img {  
+  width: 40px;
+	height: 40px;                    
+	border-radius: 100%;   
+}     
+/*end mrgray*/    

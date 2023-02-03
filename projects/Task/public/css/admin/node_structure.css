@@ -1,0 +1,14 @@
+/* Styles for node structure pages */
+
+.node-list .element-container > .name {
+    padding-left: 0.5rem;
+}
+.node-list .element-container > .type {
+    font-size: 12px;
+    width: 14rem;
+}
+.node-list .element-container > .use_reviews_associations-status,
+.node-list .element-container > .menu_top-status {
+    width: 8rem;
+    text-align: center;
+}

@@ -1,0 +1,47 @@
+<li class="attribute">
+    <?php if($attribute->is_list): ?>
+
+    <?php echo Form::tbFormGroupOpen("additional_attributes.{$attribute->id}.allowed_value_id"); ?>
+
+        <?php echo Form::tbLabel("additional_attributes[{$attribute->id}][allowed_value_id]", $attribute->name); ?>
+
+        <?php echo Form::tbSelect("additional_attributes[{$attribute->id}][allowed_value_id]", $variants, isset($value) ? $value : 0, ['id' => "additional{$attribute->id}"]); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+
+    <?php elseif($attribute->is_multiple_values): ?>
+        <?php echo Form::tbFormGroupOpen("additional_attributes.{$attribute->id}.allowed_value_id_list"); ?>
+
+            <?php echo Form::label('additional' . $attribute->id, $attribute->name); ?>
+
+            <?php echo Form::hidden("additional_attributes[$attribute->id][multiple_values]", '1'); ?>
+
+            <div class="multiple-value-container">
+                <?php foreach($variants as $id => $v): ?>
+                    <label class="checkbox-inline">
+                        <input type="checkbox"
+                               name="additional_attributes[<?php echo e($attribute->id); ?>][allowed_value_id_list][]"
+                                <?php echo in_array($id, \Input::old("additional_attributes.{$attribute->id}.allowed_value_id_list", isset($value) ? $value : [])) ? 'checked="checked"' : ''; ?>
+
+                               value="<?php echo $id; ?>"> <span><?php echo $v; ?></span>
+                    </label>
+                <?php endforeach; ?>
+            </div>
+        <?php echo Form::tbFormGroupClose();; ?>
+
+    <?php else: ?>
+        <?php echo Form::tbFormGroupOpen("additional_attributes.{$attribute->id}.value"); ?>
+
+            <?php if($attribute->is_number): ?>
+            <?php echo Form::hidden("additional_attributes[$attribute->id][is_number_value]", '1'); ?>
+
+            <?php endif; ?>
+            <?php echo Form::tbLabel("additional_attributes[{$attribute->id}][value]", $attribute->name); ?>
+
+            <?php echo Form::tbText("additional_attributes[{$attribute->id}][value]", isset($value) ? $value : null, ['id' => "additional.{$attribute->id}"]); ?>
+
+        <?php echo Form::tbFormGroupClose(); ?>
+
+    <?php endif; ?>
+</li>

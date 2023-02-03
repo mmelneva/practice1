@@ -1,0 +1,21 @@
+#callback-list .element-container > .id {
+    width: 5rem;
+}
+#callback-list .element-container > .callback_status {
+     width: 7rem;
+ }
+#callback-list .element-container > .type {
+     width: 12rem;
+ }
+#callback-list .element-container > .name {
+    width: 15rem;
+}
+#callback-list .element-container > .phone {
+    width: 12rem;
+}
+#callback-list .element-container > .url_referer {
+    width: 19rem;
+}
+#callback-list .element-container > .created_at {
+    width: 11rem;
+}

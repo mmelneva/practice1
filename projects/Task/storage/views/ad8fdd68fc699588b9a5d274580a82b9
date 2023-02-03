@@ -1,0 +1,7 @@
+<?php /* template to show gallery image list for product */ ?>
+
+<ul class="gallery-images">
+    <?php foreach($images as $image): ?>
+        <?php echo $__env->make('admin.catalog_products._gallery_images._gallery_image', ['image' => $image, 'opened_images' => $opened_images], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    <?php endforeach; ?>
+</ul>

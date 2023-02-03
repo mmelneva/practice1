@@ -1,0 +1,1 @@
+@include('admin.shared._model_image_field', ['model' => $resource, 'field' => $field['field']])

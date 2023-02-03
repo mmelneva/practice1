@@ -1,0 +1,53 @@
+/* Styles for guest pages like login and password remind */
+
+.guest-container h1 {
+    text-align: center;
+    margin-top: 0;
+}
+.guest-container {
+    display: table;
+    width: 100%;
+    background-color: #f0f0f0;
+    background-image: -moz-radial-gradient(50% 50%, ellipse cover, #f0f0f0, rgba(143, 135, 140, 0.7) 100%);
+    background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #f0f0f0, rgba(143, 135, 140, 0.7) 100%);
+    background-image: -o-radial-gradient(50% 50%, ellipse cover, #f0f0f0, rgba(143, 135, 140, 0.7) 100%);
+    background-image: -ms-radial-gradient(50% 50%, ellipse cover, #f0f0f0, rgba(143, 135, 140, 0.7) 100%);
+    background-image: radial-gradient(50% 50%, ellipse, cover, #f0f0f0, rgba(143, 135, 140, 0.7) 100%);
+}
+.guest-container > .content-wrapper {
+    display: table-cell;
+    vertical-align: middle;
+
+}
+.guest-container > .content-wrapper > .well {
+    margin: -60px auto 0;
+    width: 400px;
+    box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    border-radius: 10px;
+    border: 1px solid darkgray;
+}
+.guest-container .remember-me {
+    margin-bottom: 5px;
+}
+.guest-container .remember-me input {
+    vertical-align: middle;
+    margin: 0 3px 1px 0;
+}
+.guest-container .submit-container {
+    text-align: center;
+    overflow: hidden;
+}
+.guest-container .submit-container .right {
+    float: right;
+}
+.guest-container .submit-container .left {
+    float: left;
+}
+.guest-container .submit-container .btn-primary {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.guest-container .help-links {
+    margin-bottom: 5px;
+    text-align: center;
+}

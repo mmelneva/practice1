@@ -1,0 +1,25 @@
+.additional-attributes .toggle-other {
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 0.5em;
+}
+
+.additional-attributes .toggle-other:hover {
+    border-bottom-color: transparent;
+}
+
+.additional-attributes .disabled-attributes {
+    display: none;
+    margin-top: 15px;
+}
+
+#additional-attributes-list .on_product_page-status,
+#additional-attributes-list .use_in_similar_products-status {
+    text-align: center;
+    width: 16rem;
+}
+#additional-attributes-list .on_product_page-status {
+    width: 10rem;
+}

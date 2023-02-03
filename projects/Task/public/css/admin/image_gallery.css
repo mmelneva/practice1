@@ -1,0 +1,131 @@
+.gallery-images-container {
+    padding: 1em;
+    border: 1px dashed;
+}
+
+.gallery-images-container .add-new {
+    clear: both;
+}
+
+.gallery-images-container .add-new a {
+    color: inherit;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+}
+.gallery-images-container .add-new a:hover {
+    border-bottom-color: transparent;
+}
+
+.gallery-images-container .add-new img {
+    visibility: hidden;
+}
+.gallery-images-container .add-new.ajax-loader img {
+    visibility: visible;
+}
+
+.gallery-images {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.gallery-images > li {
+    margin-bottom: 1.5em;
+    float: left;
+    clear: none;
+}
+
+.gallery-images > li.expanded {
+    float: none;
+    clear: both;
+}
+
+.gallery-images > li .collapse {
+    display: inline-block;
+    font-weight: normal;
+    border-bottom: 1px dashed;
+    line-height: 1;
+    cursor: pointer;
+    margin-bottom: 0.3em;
+    visibility: visible;
+}
+
+.gallery-images > li .collapse:hover  {
+    border-bottom-color: transparent;
+}
+
+.gallery-images > li .image-fields-wrapper {
+    border: 1px dashed;
+    padding: 1em;
+    display: none;
+}
+
+.gallery-images > li .glyphicon {
+    text-decoration: none;
+}
+
+.gallery-images > li .image-fields-wrapper.visible {
+    display: block;
+}
+
+.gallery-images > li .toggle-flag.glyphicon-ok-circle {
+    color: #419641;
+}
+
+.gallery-images > li .toggle-flag.glyphicon-ban-circle {
+    color: #af294d;
+}
+
+.gallery-images > li .glyphicon-remove {
+    color: #ca3b37;
+}
+
+.gallery-images > li .image-fields-toggle {
+    border: 1px solid lightgray;
+    display: block;
+    font-weight: bold;
+    line-height: 1;
+    cursor: pointer;
+    margin-bottom: 0.3em;
+    margin-right: 10px;
+    padding: 10px;
+    position: relative;
+    min-width: 202px;
+    text-align: center;
+}
+.gallery-images > li .image-fields-toggle .title {
+    font-weight: normal;
+    height: 1em;
+    margin-top: 0.7em;
+    display: block;
+}
+
+.gallery-images > li.expanded .image-fields-toggle {
+    display: none;
+}
+
+.gallery-images > li .image-fields-wrapper  {
+    display: none;
+}
+
+.gallery-images > li.expanded .image-fields-wrapper  {
+    display: block;
+}
+
+.gallery-images > li .image-fields-toggle .publish-status {
+    left: 15px;
+    top: 15px;
+    position: absolute;
+}
+
+.gallery-images > li .image-fields-toggle .remove-container {
+    right: 15px;
+    top: 15px;
+    position: absolute;
+}
+
+.gallery-images > li .image-fields-wrapper .remove-container {
+    float: right;
+}
+

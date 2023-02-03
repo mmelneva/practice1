@@ -1,0 +1,50 @@
+/* Styles for users pages */
+
+.user-list .element-container > .role {
+    width: 15rem;
+}
+.user-list .element-container > .role .super-user {
+    font-style: italic;
+}
+
+.user-list .element-container > .active-status {
+    width: 10rem;
+    text-align: center;
+}
+.user-list .element-container > .ip {
+    width: 15rem;
+}
+
+.add-container {
+    display: none;
+}
+
+.ip-control {
+    background-color: #fff;
+    background-image: none;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset;
+    color: #555;
+    font-size: 14px;
+    height: 34px;
+    line-height: 1.42857;
+    padding: 6px 12px;
+    transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s;
+}
+.ip-has-error .ip-control {
+    border: 1px solid red;
+}
+
+.add-new a{
+    border-bottom: 1px dashed;
+    cursor: pointer;
+    display: inline-block;
+    font-weight: bold;
+    margin-left: 0.5em;
+    color: #000000;
+}
+.add-new a:hover{
+    border: none;
+    text-decoration: none;
+}

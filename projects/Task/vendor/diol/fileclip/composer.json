@@ -1,0 +1,39 @@
+{
+    "name": "diol/fileclip",
+    "type": "library",
+    "description": "File attachment for Eloquent models in Laravel 4",
+    "keywords": ["laravel", "eloquent", "file", "upload", "attachment", "image manipulation", "image processing"],
+    "authors": [
+        {
+            "name": "Pavel Makarov",
+            "email": "pavel.makarov@diol-it.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "laravel/framework": "4.*",
+        "imagine/imagine": "0.5.*",
+        "true/punycode": "2.1.*",
+        "guzzlehttp/guzzle": "5.3.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "3.7.*",
+        "mockery/mockery": "0.9.*",
+        "mikey179/vfsStream": "1.6.*"
+    },
+    "autoload": {
+        "files": [
+            "src/Diol/Fileclip/helpers.php"
+        ],
+        "classmap": [
+            "src/migrations",
+            "tests/Diol/Fileclip/support"
+        ],
+        "psr-0": {
+            "Diol\\Fileclip\\": "src/"
+        }
+    },
+    "minimum-stability": "stable",
+    "abandoned": "diol/fileclip:4.*"
+}

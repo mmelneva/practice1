@@ -1,0 +1,21 @@
+<?php echo Form::tbFormGroupOpen($field['field']); ?>
+
+    <?php echo Form::tbLabel($field['field'], trans('validation.attributes.' . $field['field'])); ?>
+
+    <div class="multi-checkbox">
+        <?php foreach(array_chunk(${$field['list']}, 4, true) as $chunk): ?>
+            <div class="multi-checkbox-row">
+                <?php foreach($chunk as $elementId => $elementName): ?>
+                    <div class="multi-checkbox-element">
+                        <label class="checkbox-inline">
+                            <?php echo Form::checkbox("{$field['field']}[]", $elementId, in_array($elementId, ${$field['checked']})); ?>
+
+                            <?php echo e($elementName); ?>
+
+                        </label>
+                    </div>
+                <?php endforeach; ?>
+            </div>
+        <?php endforeach; ?>
+    </div>
+<?php echo Form::tbFormGroupClose(); ?>

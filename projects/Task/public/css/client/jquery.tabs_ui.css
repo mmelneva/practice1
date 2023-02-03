@@ -1,0 +1,107 @@
+﻿/*
+Блок 'Табы на jQuery-UI'
+Modified 3.12.2015
+*/   
+         
+.tabs_ui {             
+  margin-bottom: 15px;
+  position: relative; 
+	/*border-bottom: 2px solid #cad5e3;*/ 
+}  
+.popup .tabs_ui {
+  margin: 0px;
+}                     
+ul.tabs {        
+  padding: 0px;  
+ 	margin: 0px;
+  font-size: 0px;  
+  z-index: 1;            
+}
+#group-products ul.tabs {
+  display: table;
+}
+ul.tabs li {    
+	padding: 0px;
+	margin: 0px 10px;
+  display: inline-block;
+  vertical-align: bottom;  
+  position: relative;
+	list-style: none;                              	
+  font: bold 16px/20px arial, tahoma, verdana;   
+	white-space: nowrap;
+	color: #10a2ff;
+}                   
+.block_opis ul.tabs li {                  	
+  font: normal 22px/25px arial, tahoma, verdana;   
+}
+#group-products ul.tabs li {
+  padding-right: 20px;
+  display: table-cell;
+  vertical-align: middle;
+  white-space: normal;
+}
+.popup ul.tabs li {                     	
+  font: bold 24px/28px arial, tahoma, verdana;   
+}                             
+ul.tabs li:first-child {
+  margin-left: 0px !important;
+}          
+.ui-tabs .ui-tabs-nav li a:link, .ui-tabs .ui-tabs-nav li a:visited {   
+	padding: 0px 0px 8px 0px;     
+	display: block;
+	text-decoration: none;     
+	color: #428acd;
+}
+ul.tabs_nav li a:focus {     
+ outline: none;
+}    
+.ui-tabs .ui-tabs-nav li a span {
+  border-bottom: 1px dotted #428acd;
+}
+.ui-tabs .ui-tabs-nav li a:hover span, ul.tabs li.ui-tabs-active span {
+  border-bottom-color: transparent;
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active {
+  cursor: default;   
+	color: #485260;    
+}
+.ui-tabs .ui-tabs-nav li.ui-tabs-active a:link, .ui-tabs .ui-tabs-nav li.ui-tabs-active a:visited {   
+  cursor: default;   
+	color: #485260;  
+  background: url(../../images/client/tab_active.png) 51% 20px no-repeat; 
+}       
+.block_opis .ui-tabs .ui-tabs-nav li.ui-tabs-active a:link, .block_opis .ui-tabs .ui-tabs-nav li.ui-tabs-active a:visited {  
+  background: url(../../images/client/tab_active.png) 51% 24px no-repeat;  
+}                     
+.popup .ui-tabs .ui-tabs-nav li.ui-tabs-active a:link, .popup .ui-tabs .ui-tabs-nav li.ui-tabs-active a:visited { 
+  background: url(../../images/client/tab_active.png) 51% 28px no-repeat;  
+}                                                           
+.ui-tabs .ui-tabs-hide {
+  display: none !important;
+}
+.ui-tabs-panel {     
+  width: 100%;
+	padding: 20px 0px 0px 0px; 
+	margin: 0px;
+	display: table;
+	overflow: hidden;                              
+	position: relative;    
+	background: none;
+	border: 0px;
+}
+#group-products ul.tabs li a {
+  padding: 0px;
+  background: none;
+}
+#group-products ul.tabs li > div {
+  float: left;
+}
+#group-products ul.tabs li.ui-tabs-active a span {
+  padding: 0px 0px 8px 0px;
+  display: inline-block;
+  background: url(../../images/client/tab_active.png) 51% bottom no-repeat;
+}
+#group-products .ui-tabs-panel {
+  display: block;
+  padding-top: 10px;
+}

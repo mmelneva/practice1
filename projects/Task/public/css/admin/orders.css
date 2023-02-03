@@ -1,0 +1,25 @@
+#order-list .element-container > .number {
+    width: 10em;
+}
+
+#order-list .element-container > .id {
+    text-align: center;
+    width: 6rem;
+}
+
+#order-list .element-container > .order_status {
+    width: 8rem;
+}
+
+#order-list .element-container > .name {
+    width: 20rem;
+}
+
+#order-list .element-container > .phone {
+    width: 12rem;
+}
+
+#order-list .element-container > .order_date {
+    width: 14rem;
+}
+

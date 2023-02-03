@@ -1,0 +1,25 @@
+<div class="form-group">
+    <?php echo Form::tbFormGroupOpen('additional_attributes'); ?>
+
+        <?php echo Form::label('Дополнительные параметры'); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+
+    <div class="dashed-list-container additional-attributes">
+        <ul class="enabled-attributes">
+            <?php foreach($additional_attributes_enabled as $attribute_container): ?>
+                <?php echo $__env->make('admin.catalog_products._additional_attributes._attribute', $attribute_container, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endforeach; ?>
+        </ul>
+
+        <?php if(count($additional_attributes_disabled) > 0): ?>
+        <span class="toggle-other">Добавить параметры</span>
+        <ul class="disabled-attributes">
+            <?php foreach($additional_attributes_disabled as $attribute_container): ?>
+                <?php echo $__env->make('admin.catalog_products._additional_attributes._attribute', $attribute_container, array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
+    </div>
+</div>

@@ -1,0 +1,1 @@
+<div class="name">{{{ trans('validation.attributes.full_name') }}}</div>

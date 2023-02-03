@@ -1,0 +1,53 @@
+﻿/*
+Блок 'Плюс-Минус'
+Modified 8.09.2015
+*/
+  
+.block_numbs {  
+  margin: 0px 8px;
+  float: left;   
+	position: relative;
+	top: 5px;
+  font: normal 14px/18px arial, tahoma, verdana;
+	text-align: center; 
+	z-index: 1;
+}        
+.numbs {   
+  width: 74px;    
+  min-height: 32px;  
+	float: left;
+	position: relative;
+  overflow: hidden; /*important*/        
+  font: normal 14px/32px arial, tahoma, verdana; 
+}                         
+.numbs .sht {               
+  position: absolute;
+	top: 0px;
+	right: 23px;
+}      
+input.inp_numbs {
+  width: 16px;
+  height: 32px;
+  padding: 0px 25px 0px 10px;
+  margin: 0px 30px 0px 0px;
+  overflow: hidden;
+	cursor: text;
+  font: normal 14px/32px arial, tahoma, verdana; 
+  color: #353535;
+  background: #ffffff; 
+  border: 1px solid #d3dade;
+}                   
+.numbs .plus, .numbs .minus {
+  width: 20px;
+  height: 17px;
+	position: absolute;
+  top: 17px;    
+	right: 0px;
+	cursor: pointer;
+  background: url(../images/minus.png) no-repeat;
+}
+.numbs .plus {    
+	position: absolute;  
+	top: 0px;   
+  background: url(../images/plus.png) no-repeat;
+}              

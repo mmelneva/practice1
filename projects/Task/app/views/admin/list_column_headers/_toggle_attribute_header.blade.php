@@ -1,0 +1,1 @@
+<div class="{{{ $column['field'] }}}-status">{{{ trans('validation.attributes.' . $column['field']) }}}</div>

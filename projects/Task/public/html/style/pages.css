@@ -1,0 +1,73 @@
+﻿/*
+Блок 'Постраничная навигация'
+Modified 8.09.2015
+*/
+
+.pages {       
+	padding: 10px 15px;
+  margin: 0px 0px 20px 0px;
+  display: block;
+  overflow: hidden;
+  clear: both;
+  position: relative;
+  font-size: 0px;
+  /*box-shadow: 0px 0px 5px #cbcbcb;
+  background: #cde0ee;
+  background: -webkit-linear-gradient(#dce3eb, #c4ccd5); background: -moz-linear-gradient(#dce3eb, #c4ccd5); background: -ms-linear-gradient(#dce3eb, #c4ccd5); background: -o-linear-gradient(#dce3eb, #c4ccd5); background: linear-gradient(#dce3eb, #c4ccd5);*/ 
+  border: 1px solid #d3dade;   
+  /*border-radius: 30px;*/
+  z-index: 1;
+}
+.pages .block_pages {  
+	padding: 5px 0px;
+  margin: 0px 130px;
+  font-size: 0px;
+  text-align: center;
+}
+.pages a:link, .pages a:visited {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px 3px;                                              
+  font: normal 13px/20px arial, tahoma, verdana;
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  color: #016dc2;
+}     
+.pages a.mids:link, .pages a.mids:visited { 
+  font-weight: bold; 
+  text-decoration: none;    
+  color: #353535;
+}
+.pages a.arrow_page.left:link, .pages a.arrow_page.left:visited, .pages a.arrow_page.right:link, .pages a.arrow_page.right:visited {
+  width: auto;
+  height: auto;
+  min-height: 20px;  
+  padding-left: 15px;
+  margin: 0px;
+  overflow: hidden;
+  position: absolute;
+  top: 19px;
+  left: 15px;                                 
+  font: normal 13px/13px arial, tahoma, verdana;      
+  background: url(../images/page_left.png) 0px 2px no-repeat;
+}
+.pages a.arrow_page.right:link, .pages a.arrow_page.right:visited {
+  padding: 0px 15px 0px 0px;
+  left: auto;
+  right: 15px;
+  background: url(../images/page_right.png) right 2px no-repeat;
+}
+.pages a.active:link, .pages a.active:visited {
+  text-decoration: none;
+  cursor: default;
+  color: #353535;
+  /*box-shadow: 0px 0px 5px #cfd4de;*/
+  background: #dde5eb;
+  border-radius: 4px;  
+  z-index: 1;
+}
+.pages a:hover {
+  text-decoration: none;
+}          

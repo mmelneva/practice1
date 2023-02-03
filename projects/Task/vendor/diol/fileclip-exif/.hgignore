@@ -1,0 +1,6 @@
+^vendor/
+composer\.phar
+composer\.lock
+^tests/data/fixtures_output/(?!\.hgkeep)
+^tests/data/public_root/(?!\.hgkeep)
+^tests/data/storage_root/(?!\.hgkeep)

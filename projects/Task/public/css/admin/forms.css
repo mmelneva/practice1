@@ -1,0 +1,185 @@
+.loaded-image {
+    margin: 1px;
+}
+.loaded-image a {
+    display: inline-block;
+    text-decoration: none;
+    margin-right: 5px;
+}
+.loaded-image img {
+    border-radius: 3px;
+}
+
+/* Or buttons could stick on small screens */
+.form-group .btn {
+    margin-bottom: 5px;
+}
+
+/* not enormous select in forms */
+.form-control.half {
+    width: 50%;
+    min-width: 500px;
+}
+.form-control.inline {
+    width: auto;
+    display: inline-block;
+}
+
+/* container to upload files */
+.form-group .file-upload-container {
+    overflow: hidden;
+}
+.form-group .file-upload-container > * {
+    display: inline-block;
+    vertical-align: middle;
+}
+.form-group .file-upload-container input[type="text"] {
+    width: 40%;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    height: 28px;
+}
+
+
+fieldset.bordered-group {
+    border: 1px solid #ccc;
+    padding: 0 1em 0 1em;
+    border-radius: 5px;
+    margin-bottom: 2em;
+}
+
+fieldset.bordered-group > legend {
+    display: inline-block;
+    width: auto;
+    border: none;
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding: 5px 10px;
+}
+fieldset.bordered-group > legend.legend-hint {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+fieldset.bordered-group > legend.legend-hint + div.field-hint-block {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+}
+
+/* Field hints */
+
+.field-hint-block {
+    color: gray;
+    font-size: 12px;
+}
+
+.control-label + .field-hint-block {
+    margin-top: -5px;
+    margin-bottom: 5px;
+}
+
+
+
+/* Multi file upload */
+.file-list-uploader > li:first-child {
+    display: none;
+}
+
+.file-list-uploader input[type="file"] {
+    display: none;
+}
+
+.file-list-uploader .remove {
+    cursor: pointer;
+}
+
+.simple-image-list .simple-image-element {
+    display: inline-block;
+    margin-right: 1em;
+}
+.simple-image-list .simple-image-element .remove {
+    cursor: pointer;
+}
+/* Multi file upload - end */
+
+
+
+
+/* List of grouped fields */
+
+.grouped-field-list-container legend .toggle-expand {
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.grouped-field-list-container div {
+
+}
+
+.grouped-field-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.grouped-field-list > li {
+    border: 1px solid gray;
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.grouped-field-list .remove {
+    float: right;
+    cursor: pointer;
+}
+
+.grouped-field-list .toggle-expand {
+    float: right;
+    cursor: pointer;
+    margin-right: 5px;
+}
+
+.grouped-field-list .header {
+    padding: 3px 5px 5px;
+}
+
+.grouped-field-list .header span {
+    border-bottom: 1px dashed #000000;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.grouped-field-list .header span:hover {
+    border-bottom-color: transparent;
+}
+
+.grouped-field-list-add {
+    display: inline-block;
+    margin-bottom: 20px;
+}
+/* List of grouped fields - end */
+
+
+.remove-element {
+    cursor: pointer;
+    color: #AF294D;
+}
+.remove-element.right {
+    float: right;
+}
+
+
+/* Multi checkbox */
+
+.multi-checkbox {
+    display: table;
+}
+
+.multi-checkbox-row {
+    display: table-row;
+}
+.multi-checkbox-element {
+    display: table-cell;
+    padding-right: 1em;
+}
+
+/* Multi checkbox - end */

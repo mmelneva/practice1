@@ -1,0 +1,13 @@
+<?php /* Control block for exact node in list */ ?>
+
+<a class="glyphicon glyphicon-pencil"
+   title="<?php echo e(trans('interactions.edit')); ?>"
+   href="<?php echo e(TypeContainer::getContentUrl($node)); ?>"></a>
+<a class="glyphicon glyphicon-wrench"
+   title="<?php echo e(trans('interactions.properties')); ?>"
+   href="<?php echo e(action('App\Controllers\Admin\StructureController@getEdit', [$node->id])); ?>"></a>
+<a class="glyphicon glyphicon-trash"
+   title="<?php echo e(trans('interactions.delete')); ?>"
+   data-method="delete"
+   data-confirm="Вы уверены, что хотите удалить данную страницу?"
+   href="<?php echo e(action('App\Controllers\Admin\StructureController@deleteDestroy', [$node->id])); ?>"></a>

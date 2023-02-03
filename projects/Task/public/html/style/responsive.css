@@ -1,0 +1,100 @@
+﻿/*
+Блок 'Адаптация сайта'
+Modified 8.09.2015
+*/         
+     
+@media screen and (max-width: 1588px) {   
+  .tabs_ui ul.catalog li {
+    margin-right: 9px;
+  }                                                                                                       
+}     
+     
+@media screen and (max-width: 1587px) {   
+  .jcarousel-wrapper.brends .jcarousel {
+    width: 1140px;
+  }                                                                                                         
+}      
+     
+@media screen and (max-width: 1498px) {      
+  ul.catalog.ins.tov li {   
+    width: 21.3%;  
+  }                                                                                                                 
+}         
+     
+@media screen and (max-width: 1471px) {        
+  .block_filters.ins, .pages {   
+    width: 93.8%;   
+  }     
+  ul.catalog.ins li {
+    width: 20.8%;    
+    margin-right: 15px;
+  }  
+  ul.catalog.ins li {  
+    margin-right: 10px;
+  }                                                                                                                                              
+}        
+     
+@media screen and (max-width: 1470px) {   
+  ul.catalog.ins li {
+    width: 20.4%;    
+  }       
+   ul.catalog.ins.offers li  {       
+    margin-right: 22px;
+  }                                                                                                                     
+}       
+     
+@media screen and (max-width: 1387px) {   
+  .block_filters.ins, .pages {   
+    width: 94.1%;   
+  }  
+   ul.catalog.ins.offers li  {       
+    margin-right: 6px;
+  }                                                                                                                
+}         
+     
+@media screen and (max-width: 1268px) {   
+  ul.catalog.ins li {  
+    margin-right: 11px;
+  }                                                                                                             
+}            
+     
+@media screen and (max-width: 1267px) {   
+  .contacts {   
+    width: 65%;    
+    left: -85px;     
+  }       
+  header#fix .contacts > div {
+    padding: 0px;    
+  }             
+  .jcarousel-wrapper.brends .jcarousel {
+    width: 810px;
+  }          
+  .block_filters.ins, .pages {   
+    width: 93.5%;   
+  }     
+  ul.catalog.ins li {   
+    width: 27.6%;    
+    margin-right: 8px;   
+  }    
+  ul.catalog.ins.tov li {   
+    width: 29.3%;  
+  }   
+  ul.catalog.ins.offers li  {       
+    margin-right: 22px;
+  }  
+  .mrgray > div {
+    width: 10%;
+  } 
+  footer .contacts {  
+    left: -10px;     
+  }    
+  footer .pay { 
+    padding-left: 20px;   
+  }                                                                                                                                                       
+}          
+             
+@media screen and (max-width: 1011px) {    
+  header#scrl .contacts {       
+    left: -60px;
+  }                                                                 
+}                        

@@ -1,0 +1,38 @@
+.settings-table .col-name, .settings-table .col-value {
+    vertical-align: top;
+}
+.settings-table .col-name {
+    width: 30%;
+    text-align: right;
+}
+.settings-table .col-name label {
+    margin: 0;
+    padding-top: 4px;
+}
+.settings-table .col-value {
+    width: 70%;
+}
+
+.settings-table .toggle {
+    font-size: 1.2em;
+    border-bottom: 1px dashed;
+    cursor: pointer;
+}
+.settings-table .toggle:hover {
+    border-bottom-color: transparent;
+}
+
+.settings-table .settings-group {
+    display: none;
+}
+.settings-table .settings-group.group-show {
+    display: table-row-group;
+}
+
+.settings-table .setting-description {
+    font-size: 0.8em;
+}
+
+.settings-table .form-group {
+    margin-bottom: 0;
+}

@@ -1,0 +1,100 @@
+﻿/*
+Блок 'Ползунок Диапазон'
+*/
+
+.block_slider_range {
+    display: block;
+}
+
+.drugimg_left {
+    height: 5px;
+    position: relative;
+}
+
+.drugimg_right {
+    height: 5px;
+    position: relative;
+}
+
+.ui-slider {
+    height: 5px;
+    margin: 15px 5px 15px 0;
+    position: relative;
+    cursor: pointer;
+    background: #7b7b7b;
+    border: 0;
+    border-radius: 4px;
+}
+
+.ui-slider .ui-slider-handle {
+    width: 12px;
+    height: 21px;
+    padding: 0;
+    margin-left: -3px;
+    position: absolute;
+    top: -8px;
+    left: 0;
+    cursor: pointer;
+    background: url(../../images/client/slider_range/handler.png) no-repeat;
+    z-index: 2;
+}
+
+.ui-slider .ui-slider-range {
+    height: 100%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    box-shadow: inset 1px 1px 0 #398a5c;
+    background: #10a2ff;
+    border-radius: 3px 0 0 3px;
+    z-index: 1;
+}
+
+.block_cost {
+    overflow: hidden;
+    margin-top: 5px;
+}
+
+.txt_cost {
+    margin-left: 5px;
+    position: relative;
+    font: normal 14px/30px arial, tahoma, verdana;
+}
+
+.txt_cost.b {
+    left: 116px;
+}
+
+.txt_cost.c {
+    left: 230px;
+}
+
+.txt_cost.d {
+    left: 345px;
+}
+
+.txt_cost.e {
+    float: right;
+}
+
+.cost_tire {
+    width: 16px;
+    height: 30px;
+    margin: 0 5px;
+}
+
+input[type="text"].cost {
+    width: 57px;
+    height: 30px;
+    padding: 0 10px;
+    margin: 0;
+    overflow: hidden;
+    display: inline-block;
+    position: relative;
+    font: normal 15px/30px arial, tahoma, verdana;
+    text-align: left;
+    color: #353535;
+    background: #ffffff;
+    border: 1px solid #d3dade;
+}

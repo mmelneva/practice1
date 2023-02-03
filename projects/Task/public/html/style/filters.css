@@ -1,0 +1,176 @@
+﻿/*
+Блок 'Фильтр'
+Modified 8.09.2015
+*/
+   
+/*.block_filters {    
+  border: 1px solid #d3dade;
+	border-radius: 8px;   
+}*/  
+.block_filters.ins {  
+  width: 96.4%;
+  padding: 0px 15px;   
+  margin: 20px 0px;      
+	display: table;
+  /*background: #cde0ee;*/  
+  border: 1px solid #d3dade;     
+  /*border-radius: 30px;*/  
+}                              
+.block_filters form {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+  font-size: 0px;
+}     
+/*.block_filters.ins form { 
+  margin: 0px 15px 0px 15px;
+}*/ 
+.block_filters form fieldset {   
+  padding: 0px;
+	margin: 10px 0px 0px 0px;
+  font: normal 13px/18px arial, tahoma, verdana;  
+  /*border-top: 1px solid #d3dade;*/
+}    
+.block_filters form fieldset:first-child {  
+  margin: 0px;
+	background: none; 
+  border: 0px;
+}   
+.block_filters.ins form fieldset {  
+	margin: 0px;    
+}    
+.block_filters .block_toggler {   
+	border: 1px solid #d3dade;
+	border-top: 0px;
+}       
+.block_filters form .body {    
+  padding-top: 8px;
+  margin: 0px 15px 0px 15px;
+	border-top: 1px solid #d3dade;
+}        
+.block_filters form .body.nobord {   
+  padding: 2px 0px 8px 0px;     
+	border: 0px;
+}        
+.block_filters .block_toggler .body:first-child {   
+	border: 0px;
+}           
+.block_filters form .row {
+  margin: 0px 0px 15px 0px;
+}          
+.block_filters.ins form .row {
+  margin: 0px;
+}          
+.block_filters form fieldset.down .row > div {  
+  margin: 5px 0px;                                
+}    
+.block_filters form fieldset .row .space {
+  height: 15px;
+	overflow: hidden;
+}                     
+.block_filters .tit, .block_filters .tit a:link, .block_filters .tit a:visited {  
+  padding: 10px 15px; 
+  font: bold 13px/18px arial, tahoma, verdana;   
+	text-decoration: none;
+  color: #ffffff;   
+  background: #82959f;
+  background: -webkit-linear-gradient(#82959f, #6b7d86); background: -moz-linear-gradient(#82959f, #6b7d86); background: -ms-linear-gradient(#82959f, #6b7d86); background: -o-linear-gradient(#82959f, #6b7d86); background: linear-gradient(#82959f, #6b7d86);
+  border: 0px;  
+	border-bottom: 2px solid #4a565c; 
+}                      
+.block_filters .tit span {  
+  width: 92%; 
+  margin-right: 5px;  
+  display: inline-block;
+  vertical-align: top;               
+}               
+.block_filters .tit.toggler {
+  cursor: pointer; 
+}                         
+/*.block_filters .tit:hover span {  
+  color: #c9dff0;
+}*/                         
+.block_filters .tit .arrow {   
+  width: 10px;
+	height: 7px;   
+	float: right;                     
+	overflow: hidden;  
+	position: relative;
+	top: 7px;
+	text-decoration: none;    
+  background: url(../images/filters/arrow.png) 0px -7px no-repeat; 
+}                           
+.block_filters .tit.active .arrow {    
+  background-position: 0px 0px; 
+}                            
+a.els:link,
+a.els:visited {  
+  padding: 0px 0px 0px 20px;         
+  margin-top: 10px;            
+  display: inline-block;
+  vertical-align: top;
+	position: relative;
+	top: 0px;
+	left: 0px;
+	right: auto;
+	font: normal 15px/18px arial, tahoma, verdana; 
+	text-decoration: none;    
+	color: #00ffea;
+  /*background: url(../images/filter/arrow_els.png) left center no-repeat;*/ 
+}                        
+/*a.els.active:link,
+a.els.active:visited {   
+  background: url(../images/filter/arrow_els_act.png) left center no-repeat; 
+}                                
+a.els span { 
+  border-bottom: 1px dotted #00ffea;
+}                   
+a.els:hover span { 
+  border-bottom-color: transparent;
+}*/     
+.block_filters.ins .txt {     
+  margin-right: 15px;
+  font: normal 13px/50px arial, tahoma, verdana;               
+}                   
+
+/*ul.fltr*/   
+ul.fltr {
+  padding: 0px;
+  margin: 0px 0px 0px 10px;                                  
+  display: inline-block;
+  vertical-align: top;
+	position: relative;
+	top: 15px;
+  font-size: 0px;
+}
+ul.fltr li {
+  padding: 0px;
+  margin: 0px;                                                             
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  font: normal 14px/14px arial, tahoma, verdana; 
+  position: relative;
+  text-align: center;
+}
+ul.fltr li a:link, ul.fltr li a:visited {
+  padding: 3px 5px;
+  display: block;
+  text-decoration: none;
+  color: #10a2ff;
+  /*border: 1px solid transparent;*/ 
+}
+ul.fltr li a span {
+  border-bottom: 1px dotted #10a2ff;
+}
+ul.fltr li.active a:link, ul.fltr li.active a:visited {
+  cursor: default;
+  text-decoration: none;
+  color: #353535;
+  background: #dde5eb;
+  border-color: #779eb4; 
+}
+ul.fltr li.active a:link span, ul.fltr li.active a:visited span, ul.fltr li a:hover span {
+  border-bottom-color: transparent;
+} 
+/*end ul.fltr*/              

@@ -1,0 +1,51 @@
+<?php echo Form::tbSelectBlock('category_id', $categoryVariants); ?>
+
+
+<?php echo $__env->make('admin.resource_fields._multi_checkbox_field', [
+        'field' => [
+            'field' => 'associated_categories',
+            'list' => 'associated_categories_variants',
+            'checked' => 'attached_associated_categories',
+        ]
+    ], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo Form::tbTextBlock('name'); ?>
+
+<?php echo Form::tbCheckboxBlock('publish'); ?>
+
+<?php echo Form::tbCheckboxBlock('no_template_text'); ?>
+
+
+<?php echo Form::tbTextBlock('position'); ?>
+
+
+<?php echo Form::tbTextBlock('header'); ?>
+
+
+<?php echo Form::tbTinymceTextareaBlock('content'); ?>
+
+
+<?php echo Form::tbTextareaBlock('small_content'); ?>
+
+
+<?php echo $__env->make('admin.shared._model_image_field', ['model' => $product, 'field' => 'preview_image'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('admin.shared._model_image_field', ['model' => $product, 'field' => 'image'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('admin.catalog_products._gallery_images._gallery_image_list_container', ['images' => $images], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo Form::tbFormGroupOpen('price'); ?>
+
+    <?php echo Form::tbLabel('price', trans('validation.attributes.price')); ?>
+
+    <?php echo Form::tbText('price'); ?>
+
+<?php echo Form::tbFormGroupClose(); ?>
+
+
+<?php echo Form::tbSelectBlock('built_in', $builtInVariants); ?>
+
+
+<?php echo $__env->make('admin.catalog_products._additional_attributes._additional_attributes', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+<?php echo $__env->make('admin.shared._form_meta_fields', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+<?php echo $__env->make('admin.shared._model_timestamps', ['model' => $product], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

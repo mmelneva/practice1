@@ -1,0 +1,36 @@
+<?php /* Login form */ ?>
+
+<?php $__env->startSection('title'); ?>
+    Авторизация
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <?php echo Form::open(array('url' => action('App\Controllers\Admin\SessionsController@store'))); ?>
+
+
+        <div class="form-group <?php echo e((isset($incorrect) && $incorrect) ? 'has-error' : ''); ?>">
+            <?php echo Form::label('username', 'Имя пользователя', ['class' => 'control-label']); ?>
+
+            <?php echo Form::text('username', '', ['class' => 'form-control', 'placeholder' => 'Введите логин', 'autofocus' => 'autofocus']); ?>
+
+        </div>
+
+        <div class="form-group <?php echo e((isset($incorrect) && $incorrect) ? 'has-error' : ''); ?>">
+            <?php echo Form::label('password', 'Пароль', ['class' => 'control-label']); ?>
+
+            <?php echo Form::password('password', ['class' => 'form-control', 'placeholder' => 'Введите пароль']); ?>
+
+        </div>
+
+        <div class="remember-me">
+            <label><?php echo Form::checkbox('remember', 1); ?> Запомнить меня</label>
+        </div>
+
+        <div class="submit-container">
+            <button type="submit" class="btn btn-primary left">Вход</button>
+        </div>
+
+    <?php echo Form::close(); ?>
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.guest', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

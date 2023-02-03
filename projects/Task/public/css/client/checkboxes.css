@@ -1,0 +1,216 @@
+﻿/*
+Блок 'Чекбоксы и радиобоксы'
+Modified 7.12.2015
+*/
+
+ul.checkboxes {
+    padding: 0;
+    margin: 5px 0 0 0;
+    font-size: 0;
+}
+
+ul.checkboxes li {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    list-style: none;
+    font: normal 12px/15px arial, tahoma, verdana;
+    border: 0;
+}
+
+ul.checkboxes.dinl li {
+    margin-right: 20px;
+    display: inline-block;
+}
+
+/*Прячем чекбокс и переключаем по клику на label*/
+ul.checkboxes input {
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 5px;
+    display: none;
+    border: 0;
+}
+
+ul.checkboxes label {
+    padding: 0;
+    margin: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+ul.checkboxes label span.bgs {
+    min-height: 16px;
+    padding: 5px 5px 5px 25px;
+    display: inline-block;
+    vertical-align: top;
+    clear: both;
+    position: relative;
+    border: 1px solid transparent;
+}
+
+ul.checkboxes.clrs label span.bgs {
+    padding: 0;
+    margin: 10px 3px 0 0;
+    border: 2px solid transparent;
+}
+
+ul.checkboxes.icons label span.bgs {
+    min-height: 30px;
+    padding: 5px 45px 5px 15px;
+}
+
+/*Псевдо-чекбокс*/
+ul.checkboxes label span.bgs span.img {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    cursor: pointer;
+    background: url(../../images/client/checkbox.png) no-repeat;
+    border: 0;
+}
+
+.block_filters ul.checkboxes label span.bgs span.img {
+    top: 4px;
+    left: 0;
+    background: url(../../images/client/filters/checkbox.png) no-repeat;
+}
+
+ul.checkboxes.clrs label span.bgs span.img {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    background: none;
+    border: 0;
+}
+
+ul.checkboxes.icons label span.bgs span.img {
+    width: auto;
+    height: auto;
+    padding: 5px 0 0 45px;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    background: none;
+    border: 0;
+}
+
+/*Псевдо-чекбокс для label с иконками*/
+ul.checkboxes label img.ico {
+    margin: 0 5px;
+    vertical-align: middle;
+}
+
+.block_order ul.checkboxes label .ico {
+    margin: 0 5px 0 0;
+    display: inline-block;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+/*Псевдо-чекбокс для цветов*/
+ul.checkboxes.clrs label span.bgs span.img img, ul.checkboxes.icons label span.bgs span.img img {
+    width: 30px;
+    height: 30px;
+    vertical-align: top;
+    border: 2px solid transparent;
+}
+
+ul.checkboxes.icons label span.bgs span.img img {
+    margin-right: 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    vertical-align: top;
+    border: 0;
+}
+
+/*Псевдо-радиобокс*/
+ul.checkboxes.radioboxes label span.bgs span.img {
+    width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 4px;
+    left: 0;
+    cursor: pointer;
+    background: url(../../images/client/radiobox.png) no-repeat;
+    border: 0;
+}
+
+/*Eсли настоящий чекбокс (спрятан-отмечен)*/
+ul.checkboxes.clrs label input:checked + span.bgs {
+    background: none;
+    border: 2px solid #31b4a1;
+}
+
+/*Для табов basket.html - состояние по умолчанию с фоном при F5*/
+.block_checkboxes.vybor ul.checkboxes label input:checked + span.bgs, .block_checkboxes.sposob ul.checkboxes label input:checked + span.bgs {
+    background: none;
+    border: 1px solid transparent;
+}
+
+/*end Для табов basket.html - состояние по умолчанию с фоном при F5*/
+
+ul.checkboxes label input:checked + span.bgs span.img {
+    background: url(../../images/client/filters/checkbox.png) 0 -16px no-repeat;
+}
+
+ul.checkboxes.radioboxes label input:checked + span.bgs span.img {
+    background: url(../../images/client/radiobox.png) 0 -16px no-repeat;
+}
+
+ul.checkboxes.clrs label input:checked + span.bgs span.img, ul.checkboxes.icons label input:checked + span.bgs span.img {
+    background: none;
+}
+
+
+.styled_checkbox {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+}
+.styled_checkbox input {
+    border: 0 none;
+    display: none;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    top: 0;
+}
+
+.styled_checkbox .icon {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.styled_checkbox .checkbox_icon {
+    width: 16px;
+    height: 16px;
+    background: rgba(0, 0, 0, 0) url("../../images/client/filters/checkbox.png") no-repeat scroll 0 0;
+}
+.styled_checkbox input:checked + .checkbox_icon {
+    background-position: 0 -16px;
+}
+
+.styled_checkbox .image_icon {
+    width: 30px;
+    height: 30px;
+    border: 3px solid white;
+    border-radius: 30px;
+}
+.styled_checkbox .image_icon.no_image {
+    background:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAFUlEQVQImWNgQALSU6/9J5XDwMAAAFEhChUp+wlUAAAAAElFTkSuQmCC) repeat;
+}
+.styled_checkbox input:checked + .image_icon {
+    border-color: #5f9ddd;
+}
+

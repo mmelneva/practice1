@@ -1,0 +1,188 @@
+/* Basic styles for general menus: main menu, additional menu and etc. */
+
+.menu-column {
+    width: 16em;
+    box-shadow: inset -10px 0 50px #ebebeb;
+    border-right: 2px solid #cfcfcf;
+}
+
+.menu-column.closed {
+    width: 3em;
+}
+.menu-column.closed > .menu-wrapper {
+    margin-left: -13em;
+}
+
+/* Menu toggle */
+.menu-toggle {
+    border-bottom: 1px solid #cfcfcf;
+    display: table;
+    width: 100%;
+}
+.menu-toggle > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+.menu-toggle .btn-container {
+    width: 3em;
+}
+.menu-toggle .btn-container .btn {
+    padding: 0;
+    font-size: 1em;
+    width: 3em;
+    height: 2.5em;
+    line-height: 2.3em;
+}
+.menu-toggle .menu-toggle-header {
+    font-weight: bold;
+}
+.menu-toggle .close-menu {
+    display: inline-block;
+}
+.menu-toggle .open-menu {
+    display: none;
+}
+.closed .menu-toggle .open-menu {
+    display: inline-block;
+}
+.closed .menu-toggle .close-menu {
+    display: none;
+}
+
+
+/* Main menu */
+.main-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.main-menu .menu-element {
+    display: table;
+    width: 100%;
+    padding: 0.5em 0 0.5em 0.8em;
+    cursor: pointer;
+}
+.main-menu .menu-element > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+.main-menu .menu-element:hover {
+    background-color: #eeeeee;
+    text-decoration: none;
+}
+.main-menu .menu-element .glyphicon {
+    width: 3em;
+    text-align: center;
+}
+.main-menu .menu-element.active {
+    font-weight: bold;
+    color: #AF294D;
+}
+
+.main-menu .element-group-wrapper .element-group {
+    display: none;
+}
+.main-menu .element-group-wrapper .element-group .text {
+    font-size: 0.8em;
+}
+.main-menu .element-group-wrapper .element-group .menu-element {
+    padding-left: 2em;
+}
+.main-menu .element-group-wrapper.active {
+    border-top: 1px solid #cfcfcf;
+    border-bottom: 1px solid #cfcfcf;
+}
+.main-menu .element-group-wrapper.active + .element-group-wrapper.active {
+    border-top: none;
+}
+.main-menu .element-group-wrapper.active .element-group {
+    display: block;
+}
+.main-menu .element-group-wrapper.active > .menu-element {
+    font-weight: bold;
+}
+
+
+/* Additional menu */
+.additional-menu {
+    width: 20em;
+    min-width: 20em;
+}
+.additional-menu-resize {
+    width: 3px;
+    cursor: col-resize;
+}
+.no-user-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.additional-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.additional-menu .menu-header {
+    font-weight: bold;
+}
+.additional-menu .menu-header a {
+    color: inherit;
+}
+.additional-menu ul li > div {
+    overflow: hidden;
+}
+.additional-menu ul li > div:hover {
+    background-color: #eeeeee;
+}
+
+.additional-menu .menu-element, .additional-menu .menu-header, .additional-menu .menu-footer {
+    padding: 0.5em 1em;
+}
+.additional-menu .menu-sub-header {
+    padding: 0 1em;
+}
+.additional-menu .menu-element {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+.additional-menu .menu-element > * {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.additional-menu .menu-element .name {
+    white-space: nowrap;
+    overflow: hidden;
+}
+.additional-menu .menu-element .name > a {
+    display: block;
+}
+.additional-menu .menu-element .control {
+    width: 5em;
+    text-align: right;
+}
+.additional-menu .active a {
+    color: #AF294D;
+}
+.additional-menu .active > div:first-child a {
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+/* Arrow for menus */
+.menu-column .arrowed {
+    padding-left: 1.2em;
+    display: inline-block;
+}
+.menu-column .menu-arrow {
+    float: left;
+    width: 1em;
+    height: 1em;
+    margin-left: -1.2em;
+    margin-top: 0.3em;
+    font-size: 0.8em;
+}

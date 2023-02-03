@@ -1,0 +1,6 @@
+<?php /* Common include in head */ ?>
+
+<meta charset="utf-8" />
+<title><?php echo $__env->yieldContent('title'); ?></title>
+
+<?php echo Asset::includeCss('admin_css'); ?>

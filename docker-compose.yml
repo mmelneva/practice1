@@ -1,0 +1,58 @@
+version: '3.7'
+volumes:
+  app:
+    driver: local
+    driver_opts:
+      type: none
+      o: bind
+      device: "${PWD}/"
+
+services:
+  nginx:
+    image: nginx:latest
+    container_name: nginx-tesk-task
+    restart: unless-stopped
+    volumes:
+      - ./projects:/srv/projects
+      - ./.docker/nginx/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on:
+      - php-5.4
+
+  php-5.4:
+    build:
+      context: .
+      dockerfile: ./.docker/php/php_5.4/Dockerfile
+    container_name: php-5.4
+    restart: unless-stopped
+    ports:
+      - "9000:9000"
+    volumes:
+      - .:/var/www
+      - ./projects:/srv/projects/
+      - ./.docker/php/php_5.4/log/xdebug-log:/tmp
+      - ./.docker/php/php_5.4/log:/var/log
+
+  db:
+    build:
+      context: .
+      dockerfile: ./.docker/db/mysql_5.7/Dockerfile
+    container_name: db
+    restart: unless-stopped
+    ports:
+      - 3306:3306
+    volumes:
+      - ./.docker/db/mysql_5.7/data:/var/lib/mysql
+      - .:/var/www
+    environment:
+      - MYSQL_HOST=127.0.0.1
+      - MYSQL_PORT=3306
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=test-task
+    command: --default-authentication-plugin=mysql_native_password --net_buffer_length=1000000 --max_allowed_packet=1000000000
+    
+  redis:
+    image: redis:alpine
+    container_name: redis
+    restart: unless-stopped

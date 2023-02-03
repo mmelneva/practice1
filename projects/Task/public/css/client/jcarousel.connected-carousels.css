@@ -1,0 +1,166 @@
+.connected-carousels,
+.connected-carousels .carousel {
+    overflow: hidden;
+    position: relative;
+}
+
+.connected-carousels ul {
+    width: 20000em;
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.connected-carousels ul li {
+    display: table;
+    padding: 0;
+    margin: 0;
+    float: left;
+    position: relative;
+    list-style: none;
+}
+
+.connected-carousels .prev,
+.connected-carousels .next,
+.connected-carousels .prev-stage span,
+.connected-carousels .next-stage span {
+    width: 11px;
+    height: 17px;
+    padding: 0;
+    margin: -9px 0 0 0;
+    position: absolute;
+    top: 50%;
+    left: -12px;
+    text-indent: -999999px;
+    text-decoration: none;
+    color: #ffffff;
+    background: url(../../images/client/jcarousel/connected/nav.png) no-repeat;
+}
+
+.connected-carousels .prev-stage,
+.connected-carousels .next-stage {
+    width: 210px;
+    height: 370px;
+    padding: 0;
+    display: none;
+    top: 0;
+    left: 0;
+    color: #000000;
+    background: none;
+}
+
+.connected-carousels .prev-stage,
+.connected-carousels .prev-stage span {
+    left: 0;
+}
+
+.connected-carousels .next-stage,
+.connected-carousels .next-stage span {
+    left: auto;
+    right: 0 !important;
+}
+
+.connected-carousels .next {
+    left: auto;
+    right: -12px;
+    background-position: 0 -17px;
+}
+
+.connected-carousels .next-stage span {
+    left: auto;
+    right: 0;
+    background-position: 0 -17px;
+}
+
+.connected-carousels .prev-stage.inactive,
+.connected-carousels .next-stage.inactive {
+    display: none;
+}
+
+.connected-carousels .prev.inactive,
+.connected-carousels .next.inactive {
+    opacity: .7; filter: alpha(opacity=70);
+    cursor: default;
+}
+
+/*.carousel-stage*/
+.connected-carousels .stage {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.connected-carousels .carousel-stage ul li .tcell {
+    height: 320px;
+    width: 400px;
+    display: table-cell;
+    position: relative;
+    text-align: center;
+    vertical-align: top;
+}
+
+.connected-carousels .carousel-stage ul li img {
+    max-width: 400px;
+    max-height: 320px;
+    vertical-align: top;  
+}
+
+/*end .carousel-stage*/
+
+/*.carousel-navigation*/
+.connected-carousels .navigation {
+    width: 375px;
+    margin: 20px auto;
+    position: relative;
+}
+
+.connected-carousels .carousel-navigation ul li {
+    width: 80px;
+    height: 80px;
+    margin: 0 15px 0 0;
+    cursor: pointer;
+    border: 1px solid #a3a3a3;
+}
+
+.connected-carousels .carousel-navigation ul li:first-child {
+    margin: 0 15px 0 1px;
+}
+
+.connected-carousels .carousel-navigation ul li > div.dtable {
+    height: 78px;
+    border: 1px solid transparent;
+    width: 78px;
+    overflow: hidden;
+    display: table;
+    text-align: center;
+}
+
+.connected-carousels .carousel-navigation ul li .dtable .tcell {
+    height: 78px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.connected-carousels .carousel-navigation ul li img {
+    max-width: 78px;
+    max-height: 78px;
+    vertical-align: top;
+}
+
+.connected-carousels .carousel-navigation ul li.active,
+.connected-carousels .carousel-navigation ul li.active > div {
+    border-color: #beaf79;
+}
+
+.connected-carousels .carousel-navigation ul li a:link,
+.connected-carousels .carousel-navigation ul li a:visited {
+    padding: 0;
+}
+
+/*end .carousel-navigation*/
+
+.connected-carousels .carousel-stage ul li img {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    cursor: pointer;
+}
+/*end jcarousel.jcarousel.connected-carousels.css*/

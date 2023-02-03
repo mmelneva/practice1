@@ -1,0 +1,1 @@
+<div class="id">{{{ trans('validation.attributes.order_number') }}}</div>

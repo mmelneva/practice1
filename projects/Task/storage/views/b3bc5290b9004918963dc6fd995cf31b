@@ -1,0 +1,50 @@
+<?php /* template to show gallery image for product */ ?>
+
+<li class="<?php echo (!$image->exists ? 'new' : '') . (in_array($image->id, $opened_images) ? ' expanded' : ''); ?>">
+    <input class="opened-hidden" type="hidden" name="<?php echo e("images[{$image->id}][opened]"); ?>" value="<?php echo e(in_array($image->id, $opened_images) ? 1 : 0); ?>" />
+    <?php if($image->exists): ?>
+        <div class="image-fields-toggle">
+            <?php echo $__env->make('admin.shared._list_flag', [
+            'element' => $image,
+            'action' => action('App\Controllers\Admin\CatalogProductGalleryController@putToggleAttribute', [$image->id, 'publish']),
+            'attribute' => 'publish'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+            <?php echo $__env->make('admin.catalog_products._gallery_images._gallery_image_remove_container', ['image' => $image], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <img src="<?php echo e($image->getAttachment('image')->getRelativePath('thumb')); ?>" />
+
+            <span class="title"><?php echo e(array_get($image, 'name')); ?></span>
+        </div>
+    <?php endif; ?>
+    <div class="image-fields-wrapper">
+
+        <?php echo $__env->make('admin.catalog_products._gallery_images._gallery_image_remove_container', ['image' => $image], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <?php echo Form::tbFormGroupOpen("images.{$image->id}.image_file"); ?>
+
+        <?php echo Form::tbLabel("images.{$image->id}.image_file", trans("validation.attributes.image_file")); ?>
+
+        <span class="collapse">свернуть</span>
+        <?php if(!is_null($image->image)): ?>
+        <div class="loaded-image">
+            <a href="<?php echo e($image->getAttachment('image')->getRelativePath()); ?>" target="_blank" rel="prettyPhoto">
+                <img src="<?php echo e($image->getAttachment('image')->getRelativePath('thumb')); ?>" />
+            </a>
+        </div>
+        <?php endif; ?>
+        <div class="file-upload-container">
+            <?php echo Form::file(scope_field_name("image_file", ['images', $image->id])); ?>
+
+        </div>
+        <?php echo Form::tbFormGroupClose(); ?>
+
+
+        <?php echo $__env->make('admin.catalog_products._gallery_images._gallery_image_fields', ['image' => $image], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <?php if($image->exists): ?>
+        <label>
+            <input type="checkbox" name="<?php echo e("images[{$image->id}][delete]"); ?>" />
+            удалить
+        </label>
+        <?php endif; ?>
+    </div>
+</li>

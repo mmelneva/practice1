@@ -1,0 +1,24 @@
+<ul class="element-list" data-sortable-group="">
+    <?php foreach($productList as $product): ?>
+        <li data-element-id="<?php echo e($product->id); ?>">
+            <div class="element-container">
+                <?php echo $__env->make('admin.resource_list_sortable._list_sorting_controls', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="name">
+                    <a href="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@getEdit', [$product->id])); ?>"><?php echo e($product->name); ?></a>
+                </div>
+                <div class="position"><?php echo e($product->position); ?></div>
+                <?php echo $__env->make('admin.shared._list_flag', ['element' => $product, 'action' => action('App\Controllers\Admin\CatalogProductsController@putToggleAttribute', [$product->id, 'publish']), 'attribute' => 'publish'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="control">
+                    <a class="glyphicon glyphicon-pencil"
+                       title="<?php echo e(trans('interactions.edit')); ?>"
+                       href="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@getEdit', [$product->id])); ?>"></a>
+                    <a class="glyphicon glyphicon-trash"
+                       title="<?php echo e(trans('interactions.delete')); ?>"
+                       data-method="delete"
+                       data-confirm="Вы уверены, что хотите удалить данный товар?"
+                       href="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@deleteDestroy', [$product->id])); ?>"></a>
+                </div>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>

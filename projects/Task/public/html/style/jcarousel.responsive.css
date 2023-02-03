@@ -1,0 +1,161 @@
+﻿<a href="#"></a>/*
+Блок 'Адаптивный слайдер'
+Modified 8.09.2015
+*/
+
+/*jcarousel.responsive.css*/      
+.jcarousel-wrapper {
+  /*width: 960px;*/
+	padding: 0px;
+  margin: 0px auto;
+  position: relative;   
+}           
+.jcarousel-wrapper.single {   
+  width: 960px;
+	height: 380px;
+	padding: 0px;  
+  /*background: url(../images/shad.png) center bottom no-repeat;*/
+}     
+.jcarousel {
+  width: 100%;    
+	margin: 0px auto;
+  overflow: hidden;
+  position: relative; 
+}       
+.jcarousel-wrapper.pohoj .jcarousel {   
+	height: 800px; /*Растягиваем блок, чтобы избавиться от вертикальной прокрутки*/  
+	overflow-x: hidden; /*Делаем ограничение только по x, но это даёт вертикальную прокрутку*/  
+}       
+.jcarousel > ul {
+  width: 20000em;
+  padding: 0px;
+  margin: 0px;   
+  /*font-size: 0px; Ломает слайдер*/  
+  font: normal 13px/20px arial, tahoma, verdana;     
+  position: relative;        
+}
+.jcarousel > ul > li {  
+  width: 211px !important;   
+	padding: 0px;  
+	margin: 0px 15px 0px 0px;  
+	display: block;
+	float: left;
+  position: relative;
+  list-style: none;    
+  font: normal 13px/20px arial, tahoma, verdana; 
+  text-align: left;                                                                                               
+	background: #ffffff;     
+}                                                                         
+.jcarousel-wrapper.single .jcarousel > ul > li img {    
+  width: 960px;
+	height: 350px; 
+	border-radius: 8px;     
+}        
+.jcarousel-control-prev, .jcarousel-control-next {
+  width: 26px;
+  height: 47px;
+	padding: 0px;
+  margin: -23px 0px 0px 0px;
+  display: block;  
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  font-size: 0px;
+  text-decoration: none !important;
+  cursor: pointer;
+  background: url(../images/jcarousel/nav.png) no-repeat;
+  z-index: 3;
+}      
+.jcarousel-control-next {
+  left: auto;
+  right: 0px;
+  background-position: -26px 0px;
+}    
+.jcarousel-control-prev:hover, .jcarousel-control-next:hover {
+  opacity: .7; 
+}    
+.jcarousel-pagination {  
+  padding: 0px;
+  margin: 0px;  
+  display: none;
+  position: absolute;
+  bottom: 0px;
+  left: 20px;
+  right: 20px;
+  font-size: 0px;
+  text-align: center;
+  z-index: 100;
+}       
+.jcarousel-wrapper.single .jcarousel-pagination {     
+  display: block; 
+	bottom: 45px; 
+}
+.jcarousel-pagination a:link, .jcarousel-pagination a:visited {
+  width: 20px;
+  height: 20px;
+  padding: 0px;
+  margin: 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+  font-size: 0px !important;
+  text-decoration: none !important;
+  text-indent: 100%;
+  color: transparent;
+  background: #a3a3a3;
+	border-radius: 100%;  
+}      
+.jcarousel-wrapper.single .jcarousel-pagination a:link, .jcarousel-wrapper.single .jcarousel-pagination a:visited {  
+  margin: 0px 5px;      
+  /*background: url(../images/jcarousel/pager.png) no-repeat;*/
+}          
+.jcarousel-pagination a:hover,
+.jcarousel-pagination a.active {
+  background: #259080;
+}       
+.jcarousel-wrapper.single .jcarousel-pagination a:hover, .jcarousel-wrapper.single .jcarousel-pagination a.active {
+  background-position: 0px -20px;
+}                                  
+.jcarousel-pagination a.active {     
+  cursor: default;
+}  
+/*end jcarousel.responsive.css*/
+
+/*Private*/              
+.jcarousel-wrapper.brends .jcarousel {         
+  max-width: 1305px;
+	margin: 0px auto 30px auto;  
+}                 
+.jcarousel-wrapper.wintovs .jcarousel {         
+  width: 716px; 
+	margin: 0px auto;  
+}   
+.jcarousel-wrapper.brends .jcarousel > ul > li {  
+  width: 150px !important;   
+}         
+.jcarousel-wrapper.wintovs .jcarousel > ul > li {  
+  width: 716px !important;   
+	margin: 0px;     
+}         
+.jcarousel-wrapper.brends .jcarousel li .blockimg {      
+  width: 150px;
+  height: 100px;
+  display: table-cell;
+	vertical-align: middle;
+	text-align: center;  
+}  
+.jcarousel-wrapper.brends .jcarousel li .blockimg img {
+  max-width: 150px;      
+  max-height: 100px;
+	margin: 0px auto;
+	vertical-align: top;
+}     
+.jcarousel-wrapper.wintovs .jcarousel-control-prev, .jcarousel-wrapper.wintovs .jcarousel-control-next {    
+  left: -85px;
+  background: url(../images/jcarousel/nav_white.png) no-repeat;  
+}    
+.jcarousel-wrapper.wintovs .jcarousel-control-next {         
+  left: auto;
+  right: -85px;               
+  background-position: -26px 0px;
+}                    
+/*end Private*/

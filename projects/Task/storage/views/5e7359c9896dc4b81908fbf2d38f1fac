@@ -1,0 +1,16 @@
+<?php /* Toggle flag functional (AJAX) */ ?>
+<div class="<?php echo e($attribute); ?>-status toggle-flag-container" <?php echo isset($title) ? "title='{$title}'" : ''; ?>>
+    <?php if(isset($disable_toggle) && $disable_toggle): ?>
+        <?php if($element->{$attribute}): ?>
+            <span class="glyphicon glyphicon-ok-circle toggle-flag"></span>
+        <?php else: ?>
+            <span class="glyphicon glyphicon-ban-circle toggle-flag"></span>
+        <?php endif; ?>
+    <?php else: ?>
+        <?php if($element->{$attribute}): ?>
+            <a class="glyphicon glyphicon-ok-circle toggle-flag" href="<?php echo e($action); ?>" data-method="put"></a>
+        <?php else: ?>
+            <a class="glyphicon glyphicon-ban-circle toggle-flag" href="<?php echo e($action); ?>" data-method="put"></a>
+        <?php endif; ?>
+    <?php endif; ?>
+</div>

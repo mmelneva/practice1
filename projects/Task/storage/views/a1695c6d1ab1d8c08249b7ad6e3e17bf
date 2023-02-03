@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <?php echo $__env->make('admin.layouts._head', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</head>
+
+<body>
+    <?php echo $__env->make('admin.layouts._top_nav', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+    <div class="structure-columns-container">
+        <?php echo $__env->make('admin.layouts._main_menu', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php echo $__env->yieldContent('second_column'); ?>
+
+        <div class="content-wrapper main-content">
+            <h1><?php echo $__env->yieldContent('title'); ?></h1>
+            <?php echo $__env->make('admin.layouts._alerts', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php echo $__env->yieldContent('content'); ?>
+        </div>
+    </div>
+
+    <?php echo $__env->make('admin.layouts._footer', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+</body>
+</html>

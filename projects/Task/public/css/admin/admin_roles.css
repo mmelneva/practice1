@@ -1,0 +1,14 @@
+/* Styles for roles pages */
+
+.available-resources {
+    display: table;
+}
+
+.available-resources .resource-chunk {
+    display: table-row;
+}
+
+.available-resources .resource {
+    display: table-cell;
+    padding-right: 2em;
+}

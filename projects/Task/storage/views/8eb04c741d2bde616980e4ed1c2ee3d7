@@ -1,0 +1,25 @@
+<?php /* Image field for model */ ?>
+
+<?php echo Form::tbFormGroupOpen(scope_dot_name("{$field}_file", isset($scope) ? $scope : [])); ?>
+
+    <?php echo Form::tbLabel(scope_field_name("{$field}_file", isset($scope) ? $scope : []), isset($label) ? $label : trans("validation.attributes.{$field}_file")); ?>
+
+    <?php if(!is_null($model) && $model->getAttachment($field)->exists()): ?>
+        <div class="loaded-image">
+            <a href="<?php echo e((empty($mini)) ? $model->getAttachment($field)->getRelativePath() : $model->getAttachment($field)->getRelativePath('small')); ?>" target="_blank" rel="prettyPhoto">
+                <img src="<?php echo e($model->getAttachment($field)->getRelativePath('thumb')); ?>" />
+            </a>
+            <label>
+                <?php echo Form::checkbox(scope_field_name("{$field}_remove", isset($scope) ? $scope : []), 1); ?>
+
+                удалить
+            </label>
+        </div>
+    <?php endif; ?>
+    <div class="file-upload-container">
+        <?php echo Form::file(scope_field_name("{$field}_file", isset($scope) ? $scope : [])); ?>
+
+        <label for="<?php echo e(scope_field_name("{$field}_file_text", isset($scope) ? $scope : [])); ?>">или url:</label>
+        <input type="text" id="<?php echo e(scope_field_name("{$field}_file_text", isset($scope) ? $scope : [])); ?>" name="<?php echo e(scope_field_name("{$field}_file", isset($scope) ? $scope : [])); ?>" class="form-control" />
+    </div>
+<?php echo Form::tbFormGroupClose(); ?>

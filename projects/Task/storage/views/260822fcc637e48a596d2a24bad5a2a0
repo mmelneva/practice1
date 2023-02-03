@@ -1,0 +1,40 @@
+<?php $__env->startSection('title', 'Список товаров категории "' . $category->name . '"'); ?>
+
+<?php $__env->startSection('content'); ?>
+    <div class="product-list element-list-wrapper" data-sortable-wrapper="">
+        <?php echo $__env->make('admin.catalog_products._create_button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="element-container header-container">
+            <?php echo $__env->make('admin.resource_list_sortable._list_sorting_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="name"><?php echo e(trans('validation.attributes.name')); ?></div>
+            <div class="position"><?php echo e(trans('validation.attributes.position')); ?></div>
+            <div class="publish-status"><?php echo e(trans('validation.attributes.publish')); ?></div>
+            <div class="control"><?php echo e(trans('interactions.controls')); ?></div>
+        </div>
+
+        <div data-sortable-container="">
+            <?php echo $__env->make('admin.catalog_products._product_list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+
+        <?php echo $__env->make('admin.resource_list_sortable._sorting_controls', ['resource_controller' => 'App\Controllers\Admin\CatalogProductsController'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="pagination-container">
+            <label class="pagination-on-page-container">
+                Элементов на странице:
+                <select class="choose-on-page form-control">
+                    <?php foreach($on_page_variants as $v): ?>
+                        <option
+                                <?php echo $productList->getPerPage() == $v ? 'selected="selected"' : ''; ?>
+
+                                value="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@getIndex', [$category->id])); ?>?on_page=<?php echo e($v); ?>&page=1"><?php echo e($v); ?></option>
+                    <?php endforeach; ?>
+                </select>
+            </label>
+
+            <?php echo $productList->links(); ?>
+
+        </div>
+
+        <?php echo $__env->make('admin.catalog_products._create_button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.catalog_categories.inner', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

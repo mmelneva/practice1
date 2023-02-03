@@ -1,0 +1,34 @@
+<?php /* Category list for menu */ ?>
+
+<ul>
+    <?php foreach($categoryTree as $category): ?>
+        <li>
+            <div class="menu-element <?php echo e((isset($current_category) && $current_category->id == $category['element']->id) ? 'active' : ''); ?>">
+                <div class="name">
+                    <a href="<?php echo e(action('App\Controllers\Admin\CatalogProductsController@getIndex', [$category['element']->id])); ?>"
+                       style="margin-left: <?php echo e($lvl * 0.5); ?>em;"
+                       class="arrowed"
+                       title="<?php echo e($category['element']->name); ?>">
+                        <?php if($category['hasChildren']): ?>
+                            <?php if(count($category['children']) > 0): ?>
+                                <span class="menu-arrow glyphicon glyphicon-triangle-bottom"></span>
+                            <?php else: ?>
+                                <span class="menu-arrow glyphicon glyphicon-triangle-right"></span>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <span class="menu-arrow"></span>
+                        <?php endif; ?>
+                        <?php echo e($category['element']->name); ?>
+
+                    </a>
+                </div>
+                <div class="control">
+                    <?php echo $__env->make('admin.catalog_categories._category_control_block', ['category' => $category['element']], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div>
+            <?php if(count($category['children']) > 0): ?>
+                <?php echo $__env->make('admin.catalog_categories._category_list_menu', array('categoryTree' => $category['children'], 'lvl' => $lvl + 3), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

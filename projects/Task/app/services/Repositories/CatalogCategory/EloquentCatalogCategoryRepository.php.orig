@@ -1,0 +1,250 @@
+<?php namespace App\Services\Repositories\CatalogCategory;
+
+use App\Models\CatalogCategory;
+use App\Models\ProductTypePage;
+use App\Services\RepositoryFeatures\Attribute\EloquentAttributeToggler;
+use App\Services\RepositoryFeatures\Attribute\PositionUpdater;
+use App\Services\RepositoryFeatures\Tree\PublishedTreeBuilderInterface;
+
+/**
+ * Class EloquentCatalogCategoryRepository
+ * @package App\Services\Repositories\CatalogCategory
+ */
+class EloquentCatalogCategoryRepository implements CatalogCategoryRepositoryInterface
+{
+    const POSITION_STEP = 10;
+
+    /**
+     * @var PublishedTreeBuilderInterface
+     */
+    private $treeBuilder;
+    /**
+     * @var EloquentAttributeToggler
+     */
+    private $attributeToggler;
+
+    /**
+     * @var PositionUpdater
+     */
+    private $positionUpdater;
+
+    public function __construct(
+        PublishedTreeBuilderInterface $treeBuilder,
+        EloquentAttributeToggler $attributeToggler,
+        PositionUpdater $positionUpdater
+    ) {
+        $this->treeBuilder = $treeBuilder;
+        $this->attributeToggler = $attributeToggler;
+        $this->positionUpdater = $positionUpdater;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function newInstance(array $data = [])
+    {
+        return new CatalogCategory($data);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function findById($id)
+    {
+        return CatalogCategory::find($id);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function create(array $data)
+    {
+        if (empty($data['position'])) {
+            $query = CatalogCategory::query();
+            $this->treeBuilder->scopeChildOf($query, $data['parent_id']);
+            $maxPosition = $query->max('position');
+            if (is_null($maxPosition)) {
+                $maxPosition = 0;
+            }
+            $data['position'] = $maxPosition + self::POSITION_STEP;
+        }
+
+        return CatalogCategory::create($data);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function update($id, array $data)
+    {
+        $category = $this->findById($id);
+        if (!is_null($category)) {
+            $category->fill($data);
+            $category->save();
+        }
+
+        return $category;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function delete($id)
+    {
+        $category = $this->findById($id);
+        if (!is_null($category)) {
+            $category->delete();
+
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function getTreePath($categoryId)
+    {
+        return $this->treeBuilder->getTreePath(new CatalogCategory(), $categoryId);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getTree()
+    {
+        return $this->treeBuilder->getTree(new CatalogCategory());
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getCollapsedTree($categoryId = null)
+    {
+        return $this->treeBuilder->getCollapsedTree(new CatalogCategory(), $categoryId);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getParentVariants($id, $root = null)
+    {
+        return $this->treeBuilder->getTreeVariants(new CatalogCategory(), $id, $root);
+    }
+
+
+    /**
+     * @inheritDoc
+     */
+    public function updatePositions(array $positions)
+    {
+        $this->positionUpdater->updatePositions(new CatalogCategory(), $positions, self::POSITION_STEP);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function toggleAttribute($id, $attribute)
+    {
+        $category = $this->findById($id);
+        $this->attributeToggler->toggleAttribute($category, $attribute);
+
+        return $category;
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function findByAlias($alias)
+    {
+        return CatalogCategory::where('alias', $alias)->first();
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function findPublishedByAlias($alias)
+    {
+        return CatalogCategory::where('alias', $alias)->where('publish', true)->first();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getIds($rootId = null)
+    {
+        return $this->treeBuilder->getIds(new CatalogCategory(), $rootId);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getPublishedIds($rootId = null)
+    {
+        return $this->treeBuilder->getPublishedIds(new CatalogCategory(), $rootId);
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function findPublishedById($id)
+    {
+        return CatalogCategory::where('id', $id)->where('publish', true)->first();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getCatalogTree()
+    {
+        $with = [];
+        $with['children'] = function ($query) use (&$with) {
+            $query->orderBy('position')->with($with);
+        };
+        $with['products'] = function ($query) {
+            $query->orderBy('position');
+        };
+
+        return CatalogCategory::whereNull('parent_id')->orderBy('position')->with($with)->get();
+    }
+
+    /**
+     * @inheritdoc
+     */
+    public function getManualCategoryForProductTypePage(ProductTypePage $productTypePage)
+    {
+        $category = $productTypePage->manualProductListCategory()->whereNull('parent_id')->first();
+        if (is_null($category)) {
+            $category = CatalogCategory::whereNull('parent_id')->orderBy('position')->first();
+        }
+
+        return $category;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getSaleCategories()
+    {
+        $categoryIdList = $this->getPublishedIds();
+        if (count($categoryIdList) == 0) {
+            $categoryIdList = [null];
+        }
+
+        return CatalogCategory::join(
+                'catalog_products',
+                'catalog_categories.id',1
+                '=',
+                'catalog_products.category_id'
+            )
+            ->where('catalog_products.sale', true)
+            ->where('catalog_products.publish', true)
+            ->whereIn('catalog_categories.id', $categoryIdList)
+            ->where('catalog_categories.publish', true)
+            ->orderBy('catalog_categories.position')
+            ->select('catalog_categories.*')->distinct()
+            ->get();
+    }
+}

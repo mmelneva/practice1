@@ -1,0 +1,1 @@
+<div class="{{{ $column['field'] }}}">{{{ trans('validation.model_attributes.callback.' . $column['field']) }}}</div>

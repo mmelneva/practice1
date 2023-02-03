@@ -1,0 +1,412 @@
+﻿/*
+Блок 'Навигация с картинками. Выпадающее меню на JS'
+Modified 8.07.2016
+*/
+
+.block_barmain {
+  min-height: 82px;
+  color: #ffffff;
+  background: #ffffff url(../../images/client/barmain/bgs.png) center top repeat-x;
+  box-shadow: 0px 1px 2px #CECECE;
+}
+.block_barmain .mrgray {
+  width: 100% !important;
+  display: table !important;
+  color: #78acde;
+}
+.block_barmain.nobg {
+  background: url(../../images/client/barmain/bgs.png) center top repeat-x;
+}
+.block_barmain.imgs {
+  padding: 0px 0px 30px 0px;
+  margin: 0;
+	color: #313132;
+	background: none;
+}
+.block_barmain.imgs ul.barmain {
+    margin: 25px 0px;
+}
+.block_barmain.imgs .carcas {   
+  padding: 0px 0px 30px 0px;   
+}                                                                                          
+ul.barmain {
+  padding: 0px;
+  margin: 0px;
+	position: relative;     
+  font-size: 0px;
+}
+.block_barmain ul.barmain {
+  width: 100%;
+  display: table;
+  table-layout: fixed;
+  text-align: center;
+}
+ul.barmain li {   
+  width: 11.5%;
+  padding: 0px;
+  margin: 0px 0px 0px 10px;
+  display: inline-block;
+  vertical-align: top;
+  list-style: none;
+  position: relative;
+  font: bold 13px/15px arial, tahoma, verdana;
+  text-align: center;  
+}
+.block_barmain ul.barmain li {
+  width: auto;
+  display: table-cell;
+}
+.block_barmain.imgs ul.barmain li {
+  font: bold 18px/22px arial, tahoma, verdana;
+  text-align: center !important;
+}
+ul.barmain li:first-child {   
+  margin: 0px;   
+}          
+ul.barmain li.last {
+  text-align: right;
+}
+ul.barmain > li a:link, ul.barmain > li a:visited {    
+  padding: 0px;
+  display: block; 
+	text-decoration: none;
+	color: #593d2e;
+}  
+header ul.barmain > li a:link, header ul.barmain > li a:visited { 
+  height: 72px;
+  padding: 10px 0px 0px 0px;
+}  
+.block_barmain.imgs ul.barmain li a:link, .block_barmain.imgs ul.barmain li a:visited {
+	color: #0071c8;
+    display: inline;
+}     
+ul.barmain li a:hover .txt {
+	text-decoration: underline;
+}
+.block_barmain.imgs ul.barmain li .txt a {
+	text-decoration: underline;
+    color: #0071c8;
+}
+.block_barmain.imgs ul.barmain li .txt a:hover {
+	text-decoration: none !important;
+}      
+ul.barmain li img {
+  position: relative;
+  top: 0px;
+  vertical-align: top;
+}   
+ul.barmain li .block_icons {   
+  width: 50px;               
+  margin: 0px auto;
+}         
+ul.barmain li .ico {    
+  width: 130px;
+  height: 35px;
+	padding-bottom: 6px;
+	display: table-cell;
+  margin: 0px auto;
+	vertical-align: bottom;
+	text-align: center; 
+}
+ul.barmain li .ico img.active {
+  display: none;
+}
+ul.barmain li .actived .ico img.active,
+ul.barmain li.active .ico img.active {
+ display: inline;
+}
+ul.barmain li .actived .ico img.not_active,
+ul.barmain li.active .ico img.not_active {
+  display: none;
+}
+
+.block_barmain.imgs ul.barmain li .ico {
+  width: 145px;
+  height: 145px;   
+	display: block;  
+}   
+/*ul.barmain li:first-child .ico, ul.barmain li.last .ico {
+  width: 80px;
+}*/  
+ul.barmain li .ico div {   
+  margin: 0px auto;      
+}      
+ul.barmain li .ico.a div {   
+  width: 29px;
+	height: 25px;
+}
+ul.barmain li .ico.b div {   
+  width: 27px;
+	height: 20px;
+}
+ul.barmain li .ico.c div {
+  width: 27px;
+	height: 22px;
+}
+ul.barmain li .ico.d div {   
+  width: 27px;
+	height: 26px;
+}
+ul.barmain li .ico.e div {   
+  width: 29px;
+	height: 25px;
+}
+ul.barmain li .ico.f div {   
+  width: 31px;
+	height: 18px;
+}
+ul.barmain li .ico.g div {   
+  width: 27px;
+	height: 27px;
+}
+ul.barmain li .ico.h div {   
+  width: 27px;
+	height: 27px;
+}
+ul.barmain li.active a:link, ul.barmain li.active a:visited {
+  color: #ec003d;  
+}                               
+/*end barmain*/   
+
+/*Выпадающее меню*/   
+.submenu {
+	padding: 0px;
+	margin: 0px;      
+	display: none;
+	position: absolute;
+	top: 90px;
+	left: 0px;
+	right: 0px;
+	border: 0px;  
+}
+.submenu .body {  
+	padding: 20px 0px;    
+  position: relative;
+	text-align: center;
+  box-shadow: 0px 8px 10px #666666;
+	background: #ffffff;
+}
+.submenu .carcas {
+	width: 920px;
+	margin: 0px auto;
+	position: relative;
+}  
+.submenu .block_uls {
+  width: 23%;
+	margin: 0px 0px 0px 20px;
+  float: left;
+  display: block;
+	text-align: left; 
+} 
+.submenu .block_uls:first-child {
+  margin: 0px;
+}
+.submenu .block_uls .title, .submenu .block_uls .title a:link, .submenu .block_uls .title a:visited {      
+  margin-bottom: 10px;
+	font: bold 15px/18px arial, tahoma, verdana;
+	text-decoration: none;
+	color: #002942;
+}
+.submenu ul li .title a:hover { 
+	font: bold 15px/18px arial, tahoma, verdana;
+	text-decoration: none;
+	color: #002942;
+}
+.submenu ul {
+	width: 100%;
+	max-width: 230px;
+	padding: 0px;
+	margin: 0px;
+	display: inline-block;
+	vertical-align: top;
+}
+.submenu ul.dhidden {
+  visibility: hidden;
+}
+.submenu ul li {
+	padding: 0px 0px 0px 15px;
+	margin: 5px 0px 0px 0px;
+	list-style: none;
+	font: normal 14px/18px arial, tahoma, verdana;
+	background: url(../../images/client/tire.png) 0 9px no-repeat;
+}
+.submenu ul li a:link,
+.submenu ul li a:visited {
+	text-decoration: underline;
+	color: #016dc2;
+}
+.submenu ul li a:hover {
+  text-decoration: none;
+}
+.submenu ul li a.active {
+  font-weight: bold;
+}            
+ul.barmain > li.active a:link, ul.barmain > li.active a:visited,
+ul.barmain > li a.actived:link, ul.barmain > li a.actived:visited {
+  color: #016dc2;
+}
+
+ul.barmain > li.active a .txt,
+ul.barmain > li:hover a.actived .txt {
+  text-decoration: none;
+}
+/*end Выпадающее меню*/
+
+/*mrgray*/
+/*#fix .nobg {*/
+  /*background: #caedff;*/
+/*}*/
+.mrgray {
+  padding: 15px 0px;
+}
+.mrgray > div {
+  width: 14%;  
+	margin-left: 5px;
+  display: table-cell;
+  vertical-align: top;
+  font: bold 14px/20px arial, tahoma, verdana;         
+}
+.mrgray > div:first-child {
+  width: 11%;
+  margin: 0px;
+  text-align: left;
+}
+.block_barmain .mrgray > div {
+  width: auto;
+  display: table-cell;
+  vertical-align: top;
+}
+.block_barmain .mrgray > div:first-child {
+  width: 270px !important;
+}
+.mrgray > div:last-child {
+  text-align: center;
+}
+.mrgray a:link, .mrgray a:visited { 
+	padding: 0px;
+	text-decoration: none;
+  color: #333333;
+}
+.mrgray span {
+  display: inline-block;
+  vertical-align: middle;
+}
+.mrgray .txt, .mrgray a:hover span {
+  text-decoration: underline;
+}
+.mrgray a:hover .txt {
+  text-decoration: none;
+}
+.mrgray .tcell {
+	height: 85px;
+	display: table-cell;
+  vertical-align: middle;
+}
+.mrgray span.img {
+  width: 40px;
+	height: 40px;
+  margin: 0px 10px 0px 0px;
+	text-decoration: none !important;
+	vertical-align: middle;
+	/*box-shadow: 0px 0px 1px #ffffff;
+  background: url(../../images/client/bgs_mr.png) no-repeat;*/
+	border-radius: 100%;
+}
+.mrgray span.img:first-child {
+  margin-left: 0px;
+}
+.mrgray span.img img {
+  width: 40px;
+	height: 40px;
+	border-radius: 100%;
+}
+/*end mrgray*/
+/*barmain_submenu*/
+.barmain_submenu {
+    position:absolute;
+    transform: scaleY(0);
+}
+.barmain_submenu > .body{
+    padding: 20px 15px 10px 15px;
+    position: relative;
+    text-align: center;
+    box-shadow: 0px 8px 10px #666666;
+    background: #bb8441;
+}
+ul.barmain li:hover .barmain_submenu{
+    transform: scaleY(1);
+}
+.barmain_submenu > .body .title{
+    float: left;
+    margin-bottom: 10px;
+    font: bold 15px/18px arial, tahoma, verdana;
+    text-decoration: none;
+    color: #fff;
+    border-bottom: 2px solid #443633;
+    white-space: nowrap;
+}
+.barmain_submenu > .body ul{
+    width: auto;
+    padding: 0px;
+    margin: 0px;
+    vertical-align: top;
+    margin-left: 15px;
+    display: block;
+    width: 100%;
+    padding-top: 20px;
+}
+.barmain_submenu > .body > .carcas{
+    display: table-row;
+}
+.barmain_submenu > .body ul li{
+    display: inline;
+    margin: 0px;
+    white-space: nowrap;
+}
+.barmain_submenu > .body ul > li > a{
+    height: auto !important;
+    text-align: left;
+    color: #fff;
+    font: normal 13px/16px arial, tahoma, verdana;
+}
+.barmain_submenu .block_uls {
+    max-width: 200px;
+    min-width: 100px;
+    margin: 0px 0px 0px 20px;
+    padding: 10px 30px 20px 10px;
+    padding: 20px;
+    display: block;
+    text-align: left;
+    display: table-cell;
+}
+.barmain .arrow{
+    width: 10px;
+    height: 7px;
+    background: url('../../images/client/arrow_sel_down.png') center no-repeat;
+    display: inline-block;
+    margin: 0 2px;
+}
+.regions-link{
+    webkit-columns: 5;
+    -moz-columns: 5;
+    columns: 5;
+    -webkit-column-gap: 30px;
+    -moz-column-gap: 30px;
+    column-gap: 30px;
+    padding: 0;
+}
+
+ul.regions-link > li{
+    list-style-type:none !important;
+}
+ul.regions-link > li > div > a{
+    text-decoration:none !important;;
+}
+
+ul.barmain > li.active .barmain_submenu a:link, 
+ul.barmain > li.active .barmain_submenu a:visited, 
+ul.barmain > li .barmain_submenu a.actived:link, 
+ul.barmain > li .barmain_submenua .actived:visited {
+    color: #fff;
+}
+/*end barmain_submenu*/

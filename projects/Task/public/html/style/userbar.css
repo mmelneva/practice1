@@ -1,0 +1,30 @@
+﻿/*
+Блок 'Навигация'
+Modified 8.09.2015
+*/
+        
+.userbar {   
+  overflow: hidden;
+	margin-bottom: 20px;      
+  position: relative;
+  font: normal 12px/15px arial, tahoma, verdana;      
+  z-index: 1;
+}          
+.userbar div {   
+	padding: 0px 0px 10px 0px;  
+	margin: 0px auto;
+  overflow: hidden;                      
+  color: #8d9da7;    
+	border-bottom: 1px solid #d3dade;
+}        
+.userbar span img {
+  position: relative;
+  top: -1px;
+}
+.userbar a:link, .userbar a:visited, .userbar span {       
+  font: normal 12px/15px arial, tahoma, verdana; 
+  color: #8d9da7;
+}
+.userbar span {
+  color: #8d9da7;
+}           

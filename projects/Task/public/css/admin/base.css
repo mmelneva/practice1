@@ -1,0 +1,118 @@
+html {
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    min-height: 100%;
+    padding-top: 50px;
+    font-family: Tahoma, Arial,serif;
+}
+
+
+h1 {
+    font-size: 1.3em;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.dnone {
+    display: none !important;
+}
+
+/* Top navbar */
+.navbar-fixed-top .project {
+    text-align: center;
+}
+.navbar-fixed-top .project .navbar-brand {
+    float: none;
+    display: inline-block;
+}
+.navbar-fixed-top {
+    line-height: 20px;
+}
+
+
+/* Columns for view structure */
+.structure-columns-container {
+    width: 100%;
+    height: 100%;
+    display: table;
+    table-layout: fixed;
+}
+.structure-columns-container > * {
+    display: table-cell;
+    vertical-align: top;
+    padding-bottom: 1em;
+}
+.structure-columns-container .content-wrapper {
+    padding-left: 1em;
+    padding-right: 0.5em;
+}
+@media screen and (max-width: 1366px) {
+    .main-content {
+        font-size: 12px;
+    }
+}
+
+/* Errors block for validations */
+.validation-errors {
+    color: #A94442;
+}
+
+
+/* Pagination */
+.pagination-container {
+    text-align: center;
+    overflow: hidden;
+    padding: 5px 10px;
+}
+.pagination-container .pagination {
+    margin: 0;
+}
+
+.pagination-on-page-container {
+    float: right;
+    margin-top: 5px;
+}
+
+.pagination-on-page-container .form-control {
+    display: inline-block;
+    width: 6em;
+    margin-left: 1em;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    padding-right: 3px;
+    height: 28px;
+}
+
+.dark-tabs .tab-content > .tab-pane {
+    border: 1px solid #797979;
+    border-top: 0;
+    padding: 10px 10px 0;
+    border-radius: 0 0 4px 4px;
+}
+
+.dark-tabs .nav-tabs {
+    border-color: #797979;
+}
+.dark-tabs .nav-tabs > li.active > a,
+.dark-tabs .nav-tabs > li.active > a:hover,
+.dark-tabs .nav-tabs > li.active > a:focus {
+    border-color: #797979 #797979 transparent;
+}
+
+
+.dashed-list-container {
+    border: 1px dashed;
+    margin-top: -10px;
+    padding: 1em;
+}
+
+.dashed-list-container ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}

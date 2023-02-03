@@ -1,0 +1,47 @@
+<ul class="element-list" data-sortable-group="">
+    <?php foreach($nodeTree as $node): ?>
+        <li data-element-id="<?php echo e($node->id); ?>">
+            <div class="element-container">
+                <?php echo $__env->make('admin.resource_list_sortable._list_sorting_controls', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <div class="name">
+                    <a href="<?php echo e(TypeContainer::getContentUrl($node)); ?>"
+                       style="margin-left: <?php echo e($lvl * 0.5); ?>em;"><?php echo e($node->name); ?>
+
+                        <?php $pPage = $node->productTypePage; ?>
+                        <?php if(!empty($pPage) && !empty($pPage->products_count) ): ?>
+                            (<?php echo $pPage->products_count; ?>, опубликовано: <?php echo $pPage->products_count_published; ?>)
+                        <?php endif; ?>
+                    </a>
+
+                </div>
+                <div class="position"><?php echo e($node->position); ?></div>
+                <?php echo $__env->make('admin.shared._list_flag', ['element' => $node, 'action' => action('App\Controllers\Admin\StructureController@putToggleAttribute', [$node->id, 'publish']), 'attribute' => 'publish'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php echo $__env->make('admin.shared._list_flag', ['element' => $node, 'action' => action('App\Controllers\Admin\StructureController@putToggleAttribute', [$node->id, 'menu_top']), 'attribute' => 'menu_top'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php /*<?php echo $__env->make('admin.shared._list_flag', ['element' => $node, 'action' => action('App\Controllers\Admin\StructureController@putToggleAttribute', [$node->id, 'scrolled_menu_top']), 'attribute' => 'scrolled_menu_top'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+<?php /*                <?php echo $__env->make('admin.shared._list_flag', ['element' => $node, 'action' => action('App\Controllers\Admin\StructureController@putToggleAttribute', [$node->id, 'menu_bottom']), 'attribute' => 'menu_bottom'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>*/ ?>
+                <?php if($item=$node->productTypePage()->first()): ?>
+                    <?php echo $__env->make('admin.shared._list_flag', ['element' => $item, 'action' => action('App\Controllers\Admin\ProductTypePagesController@putToggleAttribute', [$item->id, 'use_reviews_associations']), 'attribute' => 'use_reviews_associations'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php else: ?>
+                    <div class="use_reviews_associations-status toggle-flag-container"></div>
+                <?php endif; ?>
+
+                <div class="alias">
+                    <a href="<?php echo e(UrlBuilder::getUrl($node)); ?>" target="_blank">
+                        <?php echo e(TypeContainer::getClientUrl($node, false)); ?>
+
+                    </a>
+                </div>
+                <div class="type">
+                    <?php echo e(TypeContainer::getTypeName($node->type)); ?>
+
+                </div>
+                <div class="control">
+                    <?php echo $__env->make('admin.structure._node_control_block', ['node' => $node], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div>
+            <?php if(count($node->children) > 0): ?>
+                <?php echo $__env->make('admin.structure._node_list', ['nodeTree' => $node->children, 'lvl' => $lvl + 3], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

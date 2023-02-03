@@ -1,0 +1,20 @@
+{
+    "name": "diol/laravel-sweet-tooltip",
+    "description": "Laravel package to integrate sweet-tooltip.",
+    "authors": [
+        {
+            "name": "Pavel Makarov",
+            "email": "pavel@diol-it.ru"
+        }
+    ],
+    "require": {
+        "php": ">=5.4.0",
+        "illuminate/support": "4.2.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Diol\\LaravelSweetTooltip\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}

@@ -1,0 +1,18 @@
+#review-list .element-container > .name{
+    width: 15rem;
+}
+#review-list .element-container > .on_home_page-status{
+    width: 8rem;
+    text-align: center;
+}
+#review-list .element-container > .answer,
+#review-list .element-container > .comment {
+    width: 20rem;
+}
+#review-list .element-container > .date_at {
+    width: 12rem;
+}
+
+span.disabled{
+    color:grey;
+}

@@ -1,0 +1,113 @@
+﻿/*
+Блок 'Модальные окна'
+Modified 8.09.2015
+*/
+
+.popup {
+	width: 460px;
+	padding: 30px;
+	margin: 0px 0px 0px -230px;
+	display: none;
+  position: absolute;
+	top: 150px;
+	left: 50%;
+	color: #3f3f3f;
+  background: #ffffff;  
+	box-shadow: 0px 0px 10px #485260;    
+  /*border-radius: 8px;*/
+	z-index: 999;
+}  
+#popquick .popup {  
+	width: 716px;   
+	margin: 0px 0px 0px -358px;    
+}   
+
+/*section*/
+.popup .section {       
+  margin-bottom: 30px;
+  position: relative;
+  font: normal 24px/28px "PT Sans", sans-serif !important;
+}
+.popup .section .tit {
+  margin: 0px 5px 15px 5px;
+}
+
+/*close*/
+.popup a.close {
+  width: 16px;
+  height: 17px;
+	padding: 0px;
+  position: absolute;
+  top: -15px;
+  right: -15px;
+  font: normal 12px/18px arial, tahoma, verdana;
+  text-decoration: none;
+  color: #1a64d2;
+  background: url(../images/close_pop.png) no-repeat;
+}     
+.popup a.close span {
+  border-bottom: 1px dotted #1a64d2;
+}
+.popup a.close:hover span {
+  border-bottom-color: transparent;
+}    
+/*end close*/
+
+.popup .title {
+  margin: 0px !important;  
+}
+/*end section*/
+
+/*body*/
+.popup .body { 
+  position: relative;
+  font: normal 13px/16px arial, tahoma, verdana;
+}    
+#poplogout .popup .body {
+  font: normal 15px/18px arial, tahoma, verdana;
+}    
+/*end body*/   
+
+.bg0 {
+	position: fixed; 
+	top: 0px;  
+	right: 0px;  
+  bottom: 0px; 
+	left: 0px;  
+	display: none;
+	background: url(../images/1x1.png) repeat;
+	z-index: 998;             
+}
+
+/*Private*/    
+#poplogout form {
+  margin-top: 15px;
+}                
+.popup form .sideleft {
+  width: 100px;
+	padding-top: 9px;
+	margin-right: 10px;
+	float: left;   
+  font: normal 15px/18px arial, tahoma, verdana;
+}     
+.popup form .sidecenter {
+  padding-top: 1px;
+}                          
+.popup form input[type="text"], .popup form input[type="password"], .popup form textarea {
+  width: 328px;
+	resize: none;
+}  
+.popup form input[type="text"]:focus, .popup form input[type="password"]:focus, .popup form textarea:focus {    
+	width: 326px;   
+}                   
+.popup form .block_order, .popup form, .popup form fieldset {
+	padding: 0px;
+	margin: 0px;
+}             
+.popup .red {
+  color: #ff0000 !important;
+}  
+.popup .star {     
+  font: normal 15px/18px arial, tahoma, verdana;
+}                                               
+/*end Private*/                          

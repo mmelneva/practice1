@@ -1,0 +1,28 @@
+{
+	"name": "diol/cssmin",
+	"description": "Minifying CSS",
+	"type": "library",
+	"keywords": ["css","minify"],
+	"homepage": "http://code.google.com/p/cssmin/",
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Joe Scylla",
+			"email": "joe.scylla@gmail.com",
+			"homepage": "https://profiles.google.com/joe.scylla"
+		}
+	],
+	"require": {
+		"php": ">=5.0"
+	},
+	"replace": {
+		"natxet/CssMin": "3.0.*"
+	},
+	"autoload": {
+		"classmap": ["src/"]
+	},
+	"config": {
+		"preferred-install": "dist"
+	},
+	"minimum-stability": "stable"
+}

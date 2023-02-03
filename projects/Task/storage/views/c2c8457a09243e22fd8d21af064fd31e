@@ -1,0 +1,21 @@
+<?php /* Timestamps for form */ ?>
+
+<?php if(isset($model->created_at)): ?>
+    <?php echo Form::tbFormGroupOpen(); ?>
+
+        <label><?php echo e(trans('validation.attributes.created_at')); ?></label><br/>
+        <?php echo e(out_datetime($model->created_at)); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+<?php endif; ?>
+
+<?php if(isset($model->updated_at)): ?>
+    <?php echo Form::tbFormGroupOpen(); ?>
+
+        <label><?php echo e(trans('validation.attributes.updated_at')); ?></label><br/>
+        <?php echo e(out_datetime($model->updated_at)); ?>
+
+    <?php echo Form::tbFormGroupClose(); ?>
+
+<?php endif; ?>

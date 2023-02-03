@@ -1,0 +1,30 @@
+{
+    "name": "diol/laracl",
+    "type": "library",
+    "description": "Simple ACL for Laravel projects",
+    "keywords": ["laravel", "acl", "permissions"],
+    "authors": [
+        {
+            "name": "Pavel Makarov",
+            "email": "pavel.makarov@diol-it.ru",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": ">=5.4",
+        "illuminate/support": "4.*"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "4.*",
+        "mockery/mockery": "0.9.*"
+    },
+    "autoload": {
+        "classmap": [
+            "src/migrations"
+        ],
+        "psr-4": {
+            "Diol\\Laracl\\": "src/Diol/Laracl"
+        }
+    },
+    "minimum-stability": "stable"
+}

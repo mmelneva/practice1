@@ -1,0 +1,179 @@
+﻿/*
+Блок 'Каталог'
+Modified 8.09.2015
+*/
+       
+ul.catalog {
+  padding: 0px;
+  margin: 0px;
+  position: relative;
+	font-size: 0px;
+}        
+ul.catalog.ins {
+  margin: 15px 0px 0px 0px;
+}          
+ul.catalog li {
+  width: 198px;
+  padding: 15px;
+  margin: 0px 15px 20px 0px;
+  display: inline-block;
+  vertical-align: top;
+  position: relative;
+  list-style: none;   
+  font: normal 15px/18px arial, tahoma, verdana;         
+  box-shadow: 0px 0px 5px #aeaeae;
+  background: #ffffff;
+	border-bottom: 3px solid #c8c9c9;
+}        
+ul.catalog.ins li {
+  margin-right: 14px;        
+}          
+ul.catalog.ins.offers li {
+  width: 138px !important;
+}                   
+ul.catalog li:hover {
+  box-shadow: 0px 0px 10px #666666; 
+	border-color: #009cff;   
+}      
+ul.catalog li .blockimg { 
+  height: 200px;   
+  margin: 0px 0px 5px 0px;  
+	overflow: hidden;  
+	text-align: center; 
+}       
+ul.catalog.ins.offers li .blockimg { 
+  height: 150px;  
+}              
+ul.catalog li img {
+  max-width: 190px;   
+  text-align: center;
+  vertical-align: top;     
+}       
+ul.catalog.ins.offers li img {   
+  max-width: 138px;   
+}                                 
+ul.catalog li .blockfix {
+  margin: 0px 5px;
+}           
+ul.catalog li .title, ul.catalog li .title a:link, ul.catalog li .title a:visited {
+  margin-bottom: 10px;
+  overflow: hidden;
+  font: normal 15px/18px arial, tahoma, arial;
+  color: #016dc2;
+}     
+ul.catalog li:hover .title a:link, ul.catalog li:hover .title a:visited {   
+  color: #009df8;
+}                                   
+ul.catalog li .txt {
+  margin-bottom: 10px;
+  overflow: hidden;
+  font: normal 13px/16px arial, tahoma, arial;  
+	color: #464646;
+}       
+ul.catalog li .block_price {   
+  padding-bottom: 5px;
+  margin-top: 5px;  
+  overflow: hidden;
+}      
+.price {  
+  margin-right: 10px;      
+  font: bold 22px/28px arial, tahoma, arial;
+  color: #c20133;
+}   
+.price.old {  
+  margin-right: 0px;    
+  font: bold 18px/28px arial, tahoma, arial;
+	text-decoration: line-through;
+  color: #aeaeae;
+}    
+.btn_compare, .btn_star {
+  width: 37px;
+	height: 37px; 
+	padding: 0px;
+	margin: 0px;
+	text-decoration: none;
+	cursor: pointer;
+	background: none;
+	border: 0px;                          
+}    
+.btn_compare {  
+  background: url(../images/btn_compare.png) no-repeat;
+}          
+.btn_star { 
+  background: url(../images/btn_star.png) no-repeat;
+}   
+
+/*inderim*/ 
+.blockimg .ind {  
+  display: block;
+  position: absolute;
+  top: 10px;
+  left: -5px;
+	right: -5px;    
+	font-size: 0px;       
+  text-align: left;           
+  z-index: 10;
+}        
+.blockimg .ind .angle {      
+  width: 14px;  
+  height: 25px; 
+  display: inline-block;
+  vertical-align: top;   
+}         
+.blockimg .ind_green .angle {   
+  background: url(../images/ind_angle_green.png) no-repeat;    
+}    
+.blockimg .ind_pesok .angle {   
+  background: url(../images/ind_angle_pesok.png) no-repeat;    
+}       
+.blockimg .ind_red .angle {   
+  background: url(../images/ind_angle_red.png) no-repeat;    
+}        
+.blockimg .inds .txt {     
+  min-width: 30px;  
+  padding: 7px 5px;  
+	margin-bottom: 5px;  
+  display: inline-block;
+  vertical-align: top;   
+	overflow: hidden; 
+  font: normal 11px/11px arial, tahoma, verdana;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase; 
+	color: #ffffff; 
+}        
+.blockimg .ind_green .txt {  
+  background: #00b727;  
+}       
+.blockimg .ind_pesok .txt {    
+  background: #b4b700;  
+}      
+.blockimg .ind_red .txt {    
+  background: #b73100;  
+}         
+ul.catalog li .eye {  
+  display: none; 
+  position: absolute;
+	top: 100px;
+	left: 15px;
+	right: 15px;  
+  font: normal 12px/12px arial, tahoma, verdana;
+	text-align: center;    
+	color: #ffffff; 
+  background: url(../images/1x1_blue80.png) repeat; 
+	border-radius: 4px;       
+}           
+ul.catalog li:hover .eye {  
+  display: block;
+}      
+ul.catalog li .eye a:link, ul.catalog li .eye a:visited { 
+  padding: 8px;
+	display: block;    
+	text-decoration: none;   
+	color: #ffffff; 
+}   
+ul.catalog li .eye img {
+  margin-right: 5px;
+	vertical-align: middle;  
+}                 
+/*end inderim*/     

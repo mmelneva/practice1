@@ -1,0 +1,33 @@
+<?php $__env->startSection('title'); ?>
+    <?php echo e('Структура сайта'); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <div class="node-list element-list-wrapper" data-sortable-wrapper="">
+        <?php echo $__env->make('admin.structure._create_button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <div class="element-container header-container">
+            <?php echo $__env->make('admin.resource_list_sortable._list_sorting_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <div class="name"><?php echo e(trans('validation.attributes.name')); ?></div>
+            <div class="position"><?php echo e(trans('validation.attributes.position')); ?></div>
+            <div class="publish-status"><?php echo e(trans('validation.attributes.publish')); ?></div>
+            <div class="menu_top-status"><?php echo e(trans('validation.attributes.menu_top')); ?></div>
+            <?php /*<div class="scrolled_menu_top-status"><?php echo e(trans('validation.attributes.scrolled_menu_top')); ?></div>*/ ?>
+            <?php /*<div class="menu_bottom-status"><?php echo e(trans('validation.attributes.menu_bottom')); ?></div>*/ ?>
+            <div class="use_reviews_associations-status"><?php echo e(trans('validation.attributes.use_reviews_associations_short')); ?></div>
+            <div class="alias"><?php echo e(trans('validation.attributes.alias')); ?></div>
+            <div class="type"><?php echo e(trans('validation.attributes.type')); ?></div>
+            <div class="control"><?php echo e(trans('interactions.controls')); ?></div>
+        </div>
+
+        <div data-sortable-container="">
+            <?php echo $__env->make('admin.structure._node_list', ['nodeTree' => $nodeTree, 'lvl' => 0], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+
+        <?php echo $__env->make('admin.resource_list_sortable._sorting_controls', ['resource_controller' => 'App\Controllers\Admin\StructureController'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <?php echo $__env->make('admin.structure._create_button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

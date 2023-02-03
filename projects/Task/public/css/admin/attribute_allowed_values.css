@@ -1,0 +1,27 @@
+.attribute-allowed-values .handler {
+    cursor: pointer;
+}
+.attribute-allowed-values .values-container .value {
+    margin-bottom: 4px;
+}
+.attribute-allowed-values .form-control {
+    display: inline-block;
+    width: 250px;
+    padding: 3px 12px;
+    height: 28px;
+}
+.attribute-allowed-values .values-container .handler {
+    color: #CA3B37;
+}
+.attribute-allowed-values .input .handler {
+    color: #4CA44C;
+}
+
+.attribute-allowed-values-header {
+    margin-bottom: 1px;
+}
+
+.attribute-allowed-values-header .value,
+.attribute-allowed-values-header .description {
+    width: 250px;
+}

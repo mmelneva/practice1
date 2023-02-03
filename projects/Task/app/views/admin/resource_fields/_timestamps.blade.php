@@ -1,0 +1,1 @@
+@include('admin.shared._model_timestamps', ['model' => $resource])

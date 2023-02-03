@@ -1,0 +1,3 @@
+<?php /* Common scripts include */ ?>
+
+<?php echo Asset::includeJS('admin_js'); ?>
