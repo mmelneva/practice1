@@ -1,0 +1,1 @@
+<?php echo $__env->make('admin.shared._list_flag', ['element' => $resource, 'action' => action($resource_controller . '@putToggleAttribute', [$resource->id, $column['field']]), 'attribute' => $column['field']], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

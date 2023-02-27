@@ -1,0 +1,11 @@
+<div class="<?php echo e($column['field']); ?>">
+    <a href="<?php echo e(wrap_with_paginator(action($resource_controller . '@getEdit', [$resource->id]), isset($resource_list) ? $resource_list : null)); ?>"
+       title="<?php echo e($resource->{$column['field']}); ?>">
+        <?php if(trim($resource->{$column['field']})): ?>
+            <?php echo e($resource->{$column['field']}); ?>
+
+        <?php else: ?>
+            <i><?php echo e(trans('validation.attributes.not_specified')); ?></i>
+        <?php endif; ?>
+    </a>
+</div>

@@ -1,0 +1,12 @@
+<ul class="element-list" data-sortable-group="">
+    <?php foreach($resource_list as $resource): ?>
+        <li data-element-id="<?php echo e($resource->id); ?>">
+            <div class="element-container">
+                <?php echo $__env->make('admin.resource_list_sortable._list_sorting_controls', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php foreach($list_columns as $column): ?>
+                    <?php echo $__env->make($column['template'], ['column' => $column], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endforeach; ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>

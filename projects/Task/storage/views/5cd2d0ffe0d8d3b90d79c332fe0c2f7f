@@ -1,0 +1,15 @@
+<?php /* Default controls for element list */ ?>
+
+<a class="glyphicon glyphicon-pencil"
+   title="<?php echo e(trans('interactions.edit')); ?>"
+   href="<?php echo e(wrap_with_paginator(action($controller . '@getEdit', [$element->id]), isset($resource_list) ? $resource_list : null)); ?>"></a>
+
+<?php if(isset($disable_delete) && $disable_delete): ?>
+   <span class="glyphicon glyphicon-trash" title="<?php echo e(trans('alerts.delete_is_disallowed')); ?>"></span>
+<?php else: ?>
+   <a class="glyphicon glyphicon-trash"
+      title="<?php echo e(trans('interactions.delete')); ?>"
+      data-method="delete"
+      data-confirm="<?php echo e(isset($delete_confirm) ? $delete_confirm : trans('interactions.delete_confirm')); ?>"
+      href="<?php echo e(wrap_with_paginator(action($controller . '@deleteDestroy', [$element->id]), isset($resource_list) ? $resource_list : null)); ?>"></a>
+<?php endif; ?>

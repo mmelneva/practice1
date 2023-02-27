@@ -1,0 +1,4 @@
+<div class="<?php echo e($column['field']); ?>" title="<?php echo e(Str::formatDate($resource->created_at, 'd.m.Y H:i:s')); ?>">
+    <?php echo e(Str::formatDate($resource->created_at, 'd.m.Y H:i:s')); ?>
+
+</div>

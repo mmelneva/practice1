@@ -1,0 +1,5 @@
+<?php if(empty($no_create)): ?>
+    <div>
+        <a href="<?php echo e(wrap_with_paginator(action($resource_controller . '@getCreate'), $resource_list)); ?>" class="btn btn-success btn-xs"><?php echo e(array_get($resource_texts, 'add_new', 'Добавить')); ?></a>
+    </div>
+<?php endif; ?>

@@ -1,0 +1,1 @@
+<div class="control"><?php echo e(trans('interactions.controls')); ?></div>

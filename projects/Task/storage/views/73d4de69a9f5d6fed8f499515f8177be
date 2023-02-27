@@ -1,0 +1,4 @@
+<div class="<?php echo e($column['field']); ?>" title="<?php echo e($resource->{$column['field']}); ?>">
+    <?php echo e($resource->{$column['field']}); ?>
+
+</div>

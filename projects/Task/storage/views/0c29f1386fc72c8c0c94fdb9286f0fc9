@@ -1,0 +1,28 @@
+<?php $__env->startSection('title'); ?>
+     <?php echo e(array_get($resource_texts, 'list_title', 'Список')); ?>
+
+<?php $__env->stopSection(); ?>
+
+<?php $__env->startSection('content'); ?>
+    <div class="element-list-wrapper" data-sortable-wrapper="" <?php echo isset($element_list_wrapper_id) ? "id='{$element_list_wrapper_id}'" : ''; ?>>
+        <?php echo $__env->make('admin.resource_list._create_button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <div class="element-container header-container">
+            <?php echo $__env->make('admin.resource_list_sortable._list_sorting_header', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php foreach($list_columns as $column): ?>
+                <?php if(isset($column['header_template'])): ?>
+                    <?php echo $__env->make($column['header_template'], ['column' => $column], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php else: ?>
+                    <?php echo $__env->make('admin.list_column_headers._standard_header', ['column' => $column], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+            <?php endforeach; ?>
+        </div>
+
+        <div data-sortable-container="">
+            <?php echo $__env->make('admin.resource_list_sortable._list', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        </div>
+        <?php echo $__env->make('admin.resource_list_sortable._sorting_controls', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+        <?php echo $__env->make('admin.resource_list._create_button', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+    </div>
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

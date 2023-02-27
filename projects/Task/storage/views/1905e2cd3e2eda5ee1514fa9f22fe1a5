@@ -1,0 +1,8 @@
+<div class="<?php echo e($column['field']); ?>"
+     title="<?php echo e(trans('validation.model_attributes.order.status.' . $resource->{$column['field']})); ?>">
+<span <?php if($resource->{$column['field']} == \App\Models\OrderStatusConstants::NOVEL): ?>
+    class="text-success" <?php endif; ?> >
+    <?php echo e(trans('validation.model_attributes.order.status.' . $resource->{$column['field']})); ?>
+
+</span>
+</div>

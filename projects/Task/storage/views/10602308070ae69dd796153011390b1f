@@ -1,0 +1,1 @@
+<div class="id"><?php echo e(trans('validation.attributes.callback_number')); ?></div>
