@@ -1,0 +1,57 @@
+<?php $__env->startSection('main_menu_class', 'closed'); ?>
+
+<?php $__env->startSection('second_column'); ?>
+    <?php echo HTML::additionalMenuOpen(['resize' => 'resource-' . md5(array_get($resource_texts, 'list_title', 'Список'))]); ?>
+
+        <div class="menu-wrapper">
+            <div class="menu-header"><a href="<?php echo e(action($resource_controller . '@getIndex')); ?>"><?php echo e(array_get($resource_texts, 'list_title', 'Список')); ?></a></div>
+            <?php if(empty($no_create)): ?>
+                <div class="menu-sub-header">
+                    <a href="<?php echo e(wrap_with_paginator(action($resource_controller . '@getCreate'), $resource_list)); ?>" class="btn btn-success btn-xs"><?php echo e(array_get($resource_texts, 'add_new', 'Добавить')); ?></a>
+                </div>
+            <?php endif; ?>
+            <ul>
+                <?php foreach($resource_list as $r): ?>
+                    <li>
+                        <div class="menu-element <?php echo e($resource->id == $r->id ? 'active' : ''); ?>">
+                            <?php foreach($menu_columns as $column): ?>
+                                <?php echo $__env->make($column['template'], ['column' => $column, 'resource' => $r], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                            <?php endforeach; ?>
+                        </div>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+
+            <?php echo $__env->make('admin.shared._pagination_simple_links', ['paginator' => $resource_list], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+
+            <?php if(empty($no_create)): ?>
+                <div class="menu-footer">
+                    <a href="<?php echo e(wrap_with_paginator(action($resource_controller . '@getCreate'), $resource_list)); ?>" class="btn btn-success btn-xs"><?php echo e(array_get($resource_texts, 'add_new', 'Добавить')); ?></a>
+                </div>
+            <?php endif; ?>
+        </div>
+    <?php echo HTML::additionalMenuClose(); ?>
+
+<?php $__env->stopSection(); ?>
+
+
+<?php $__env->startSection('content'); ?>
+    <?php echo Form::tbRestfulFormOpen($resource, $errors, $resource_controller, ['autocomplete' => 'off', 'id' => isset($form_id) ? $form_id : 'resource-form']); ?>
+
+        <?php foreach($form_fields as $field): ?>
+            <?php echo $__env->make($field['template'], ['field' => $field], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+        <?php endforeach; ?>
+
+        <?php echo Form::tbFormGroupOpen(); ?>
+
+            <?php echo $__env->yieldContent('submit_block'); ?>
+        <?php echo Form::tbFormGroupClose(); ?>
+
+
+        <?php echo Form::hidden('page', \Input::get('page')); ?>
+
+    <?php echo Form::close(); ?>
+
+
+<?php $__env->stopSection(); ?>
+<?php echo $__env->make('admin.layouts.default', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>

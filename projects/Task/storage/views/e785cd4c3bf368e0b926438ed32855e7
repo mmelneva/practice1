@@ -1,0 +1,7 @@
+<?php echo Form::tbFormGroupOpen($field['field']); ?>
+
+    <?php echo Form::tbLabel($field['field'], trans('validation.attributes.' . $field['field'])); ?>
+
+    <?php echo Form::tbText($field['field']); ?>
+
+<?php echo Form::tbFormGroupClose(); ?>

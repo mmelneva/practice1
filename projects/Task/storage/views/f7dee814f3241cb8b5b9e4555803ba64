@@ -1,0 +1,35 @@
+<li data-element-list="element" data-element-key="<?php echo $key; ?>">
+    <div>
+        <span data-element-list="remove" class="remove glyphicon glyphicon-remove"></span>
+        <?php if($allowed_value->exists): ?>
+            <span data-element-list="toggle-expand" class="toggle-expand glyphicon glyphicon-collapse-down"></span>
+        <?php endif; ?>
+    </div>
+
+    <div data-element-list="header" class="header <?php echo e(!$allowed_value->exists ? 'dnone' : ''); ?>">
+        <span data-element-list="edit"><?php echo e(array_get($allowed_value, 'value', '-')); ?></span>
+    </div>
+    <div data-element-list="fields" class="<?php echo e(!$allowed_value->exists ? '' : 'dnone'); ?>">
+        <?php echo Form::hidden("allowed_values[{$key}][id]", array_get($allowed_value, 'id')); ?>
+
+
+        <?php echo Form::tbFormGroupOpen("allowed_values.{$key}.value"); ?>
+
+            <?php echo Form::tbLabel("allowed_values[{$key}][value]", trans('validation.attributes.value')); ?>
+
+            <?php echo Form::tbText("allowed_values[{$key}][value]", array_get($allowed_value, 'value')); ?>
+
+        <?php echo Form::tbFormGroupClose(); ?>
+
+
+        <?php echo Form::tbFormGroupOpen("allowed_values.{$key}.position"); ?>
+
+            <?php echo Form::tbLabel("allowed_values[{$key}][position]", trans('validation.attributes.position')); ?>
+
+            <?php echo Form::tbText("allowed_values[{$key}][position]", array_get($allowed_value, 'position')); ?>
+
+        <?php echo Form::tbFormGroupClose(); ?>
+
+
+    </div>
+</li>

@@ -1,0 +1,34 @@
+<?php /* Node list for menu */ ?>
+
+<ul>
+    <?php foreach($nodeTree as $node): ?>
+        <li>
+            <div class="menu-element <?php echo e((isset($current_node) && $current_node->id == $node['element']->id) ? 'active' : ''); ?>">
+                <div class="name">
+                    <a href="<?php echo e(TypeContainer::getContentUrl($node['element'])); ?>"
+                       style="margin-left: <?php echo e($lvl * 0.5); ?>em;"
+                       class="arrowed"
+                       title="<?php echo e($node['element']->name); ?>">
+                        <?php if($node['hasChildren']): ?>
+                            <?php if(count($node['children']) > 0): ?>
+                                <span class="menu-arrow glyphicon glyphicon-triangle-bottom"></span>
+                            <?php else: ?>
+                                <span class="menu-arrow glyphicon glyphicon-triangle-right"></span>
+                            <?php endif; ?>
+                        <?php else: ?>
+                            <span class="menu-arrow"></span>
+                        <?php endif; ?>
+                        <?php echo e($node['element']->name); ?>
+
+                    </a>
+                </div>
+                <div class="control">
+                    <?php echo $__env->make('admin.structure._node_control_block', ['node' => $node['element']], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                </div>
+            </div>
+            <?php if(count($node['children']) > 0): ?>
+                <?php echo $__env->make('admin.structure._node_list_menu', array('nodeTree' => $node['children'], 'lvl' => $lvl + 3, 'current_node' => isset($current_node) ? $current_node : null), array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endif; ?>
+        </li>
+    <?php endforeach; ?>
+</ul>

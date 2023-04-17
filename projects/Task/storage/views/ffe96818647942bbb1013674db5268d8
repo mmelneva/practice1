@@ -1,0 +1,6 @@
+<?php echo Form::tbFormGroupOpen($field['field']); ?>
+
+    <input type="hidden" value="0" name="<?php echo e($field['field']); ?>">
+    <label class="checkbox-inline"><?php echo Form::checkbox($field['field']); ?> <span class="bold"><?php echo e(trans('validation.attributes.' . $field['field'])); ?></span></label>
+<?php echo Form::tbFormGroupClose(); ?>
+

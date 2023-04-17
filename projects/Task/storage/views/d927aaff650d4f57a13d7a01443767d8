@@ -1,0 +1,6 @@
+<?php /* Buttton to delete node */ ?>
+
+<a class="btn btn-danger"
+   data-method="delete"
+   data-confirm="Вы уверены, что хотите удалить данную страницу?"
+   href="<?php echo e(action('App\Controllers\Admin\StructureController@deleteDestroy', $node->id)); ?>"><?php echo e(trans('interactions.delete')); ?></a>

@@ -1,0 +1,14 @@
+<fieldset id="allowed-values-container" class="bordered-group grouped-field-list-container">
+    <legend><?php echo e(trans('validation.attributes.allowed_values')); ?> <?php if(count($allowed_values)): ?><span class="toggle-expand glyphicon glyphicon-collapse-down"></span><?php endif; ?></legend>
+    <div class="form-group <?php if(count($allowed_values)): ?> dnone <?php endif; ?>">
+        <ul class="grouped-field-list" id="allowed_value_list" data-element-list="container">
+            <?php foreach($allowed_values as $key => $allowed_value): ?>
+                <?php echo $__env->make('admin.additional_attributes.form._allowed_value_element', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            <?php endforeach; ?>
+        </ul>
+
+        <span data-load-element-url="<?php echo e(action('App\Controllers\Admin\AdditionalAttributesController@getAllowedValueElement')); ?>"
+              data-element-list-target="allowed_value_list" data-element-list="add"
+              class="btn btn-default btn-xs grouped-field-list-add">Добавить новое</span>
+    </div>
+</fieldset>
