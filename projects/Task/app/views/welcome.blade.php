@@ -1,27 +1,56 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN">
-<html>
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 <head>
-  <title>lit-mebel</title>
-  <link rel="stylesheet" href="welcome.blade.css">
-  
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laravel</title>
+{{ Asset::includeCss('client_css') }}
+{{ Asset::includeJS('client_js') }}
 </head>
-
 <body>
-<!-- Main content -->
-<h1>My first styled page</h1>
+<h1>каталог продуктов по категориям</h1>
+<div class="tab">
+[club65537571|$categoryTree as $category]
+<button class="tablinks" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
+@endforeach
+</div>
 
-<p>Welcome to my styled page!
+<div class="container">
+<div class="row">
+<div class="col-6 main">
+[club65537571|$products as $product]
+<div class="product-item" name="{{{ $product->category_id }}}">
 
-<p>It lacks images, but at least it has style.
-And it has links, even if they don't go
-anywhere&hellip;
+<!— <div class="product-img">
+<a href="">
+<img src="https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg">
+</a>
+</div> —>
 
-<p>There should be more here, but I don't know
-what yet.
-
-<!-- Sign and date the page, it's only polite! -->
-<address>Made 5 April 2004<br>
-  by myself.</address>
+<div class="product-list">
+[id147056226|strlen($product->name] > 50)
+<h3>{{{ mb_substr($product->name, 0, 50) }}}...</h3>
+@else
+<h3>{{{ $product->name }}}</h3>
+@endif
+<div class="stars"></div>
+<span class="price"> ₽ {{{ $product->price }}}</span>
+<div class="actions">
+<div class="add-to-cart">
+<a href="" class="cart-button">В корзину</a>
+</div>
+<div class="add-to-links">
+<a href="" class="wishlist"></a>
+<a href="" class="compare"></a>
+</div>
+<div class="id_item">catId => {{{ $product->category_id }}}</div>
+</div>
+</div>
+</div>
+@endforeach
+</div>
+</div>
+</div>
 
 </body>
 </html>
