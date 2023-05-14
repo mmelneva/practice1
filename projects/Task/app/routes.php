@@ -108,6 +108,9 @@ Route::group(
             'cat/{catalogQuery}',
             ['as' => 'catalog', 'uses' => 'App\Controllers\Client\CatalogController@getShow']
         )->where('catalogQuery', '.*');
+        
+        // Catalog
+	  Route::controller('catalog-categories', 'App\Controllers\Client\CatalogCategoriesController');
 
         // Proxy route for filter
         Route::get(
