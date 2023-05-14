@@ -25,6 +25,10 @@ return [
     'groups' => [
         'client_css' => [
             'assets' => [
+            
+          	     'vendor/twitter-bootstrap/css/bootstrap.min.css',
+			'vendor/font-awesome/css/font-awesome.min.css',
+			'vendor/twitter-bootstrap/css/bootstrap-theme.min.css',
                 'vendor/prettyPhoto/css/prettyPhoto.css',
                 'vendor/swiper/css/swiper.min.css',
                 'css/client/index.css',
@@ -48,6 +52,9 @@ return [
                 'css/client/tovar.css',
                 'css/client/userbar.css',
                 'css/client/grid.css',
+                'css/client/catalogtabs.css',
+			'css/client/card.css',
+			'css/client/container.css',
             ],
             'filters' => ['css_min', 'embed_css', 'css_url_rebase', 'strip_bom'],
             'output' => 'css/compiled/client.css'
@@ -76,7 +83,7 @@ return [
                 'js/client/height.resize.js',
                 'js/common/phone_mask.js',
                 'js/client/counters_targeting.js',
-                'js/client/start.js',
+//              'js/client/start.js',
                 'js/client/catalog.js',
 //                'js/client/count_inputs_hooks.js',
                 'js/client/callback.js',
@@ -87,6 +94,7 @@ return [
 
                 'js/common/numeric.js',
                 'js/common/pretty_photo.js',
+                'js/client/catalogtabs.js', //
             ],
             'filters' => ['js_min'],
             'output' => 'js/compiled/client.js'
