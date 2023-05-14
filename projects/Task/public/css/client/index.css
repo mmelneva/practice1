@@ -281,7 +281,7 @@ a:link,
 a:visited {
     padding-bottom: 1px;
     outline: none;
-    text-decoration: underline;
+ /*   text-decoration: underline;*/
     color: #443633;
 }
 

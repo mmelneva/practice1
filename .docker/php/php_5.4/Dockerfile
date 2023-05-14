@@ -36,6 +36,7 @@ RUN php5enmod mcrypt
 RUN docker-php-ext-install mcrypt mbstring zip exif gd mysqli pdo pdo_mysql pcntl
 
 ADD https://git.archlinux.org/svntogit/packages.git/plain/trunk/freetype.patch?h=packages/php /tmp/freetype.patch
+RUN git config --global core.autocrlf true
 RUN docker-php-source extract; \
   cd /usr/src/php; \
   patch -p1 -i /tmp/freetype.patch; \

@@ -20,15 +20,17 @@
 <div class="row">
 <div class="col-6 main">
 
+ 
 
 @foreach($products as $product)
 <div class="product-item" name="{{{ $product->category_id }}}">
 
- <div class="product-img">
+<!--<div class="product-img">
 <a href="">
 <img src="{{{ $product->image }}}">
 </a>
-</div> 
+</div>-->
+
 
 <div class="product-list">
 @if (strlen($product->name > 50))

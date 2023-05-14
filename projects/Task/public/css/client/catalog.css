@@ -38,10 +38,10 @@ ul.catalog.ins li {
 
 ul.catalog li:hover {
     box-shadow: 0px 0px 10px #666666;
-    border-color: #7aade0;
+   // border-color: #7aade0;
 }
 [data-source-popup] [data-source-product].active {
-    background-color: #7aade0;
+  //  background-color: #7aade0;
 }
 [data-source-popup] [data-source-product]:not(.active) {
     background-color: #ffffff;
@@ -381,7 +381,7 @@ ul.catalog .jq-selectbox__select {
     font-weight: bold;
 }
 #quick_links ul li ul li.active {
-    color: #016dc2;
+  //  color: #016dc2;
 }
 /* END - quick links block*/
 
