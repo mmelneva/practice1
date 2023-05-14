@@ -3,32 +3,35 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Laravel</title>
+<title>lit-mebel</title>
 {{ Asset::includeCss('client_css') }}
 {{ Asset::includeJS('client_js') }}
 </head>
 <body>
-<h1>каталог продуктов по категориям</h1>
+<h1>Каталог продуктов по категориям</h1>
 <div class="tab">
-[club65537571|$categoryTree as $category]
-<button class="tablinks" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
+@foreach($categoryTree as $category)
+	<button class="tablinks" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
 @endforeach
+
 </div>
 
 <div class="container">
 <div class="row">
 <div class="col-6 main">
-[club65537571|$products as $product]
+
+
+@foreach($products as $product)
 <div class="product-item" name="{{{ $product->category_id }}}">
 
-<!— <div class="product-img">
+ <div class="product-img">
 <a href="">
-<img src="https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg">
+<img src="{{{ $product->image }}}">
 </a>
-</div> —>
+</div> 
 
 <div class="product-list">
-[id147056226|strlen($product->name] > 50)
+@if (strlen($product->name > 50))
 <h3>{{{ mb_substr($product->name, 0, 50) }}}...</h3>
 @else
 <h3>{{{ $product->name }}}</h3>
@@ -54,4 +57,3 @@
 
 </body>
 </html>
-

@@ -110,7 +110,7 @@ Route::group(
         )->where('catalogQuery', '.*');
         
         // Catalog
-	  Route::controller('catalog-categories', 'App\Controllers\Client\CatalogCategoriesController');
+	  Route::controller('', 'App\Controllers\Client\CatalogCategoriesController');
 
         // Proxy route for filter
         Route::get(

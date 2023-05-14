@@ -10,15 +10,18 @@
 <body>
 <h1>каталог продуктов по категориям</h1>
 <div class="tab">
-[club65537571|$categoryTree as $category]
-<button class="tablinks" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
+@foreach($categoryTree as $category)
+	<button class="tablinks" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
 @endforeach
+
 </div>
 
 <div class="container">
 <div class="row">
 <div class="col-6 main">
-[club65537571|$products as $product]
+
+
+@foreach($products as $product)
 <div class="product-item" name="{{{ $product->category_id }}}">
 
 <!— <div class="product-img">
@@ -28,7 +31,7 @@
 </div> —>
 
 <div class="product-list">
-[id147056226|strlen($product->name] > 50)
+@if (strlen($product->name > 50))
 <h3>{{{ mb_substr($product->name, 0, 50) }}}...</h3>
 @else
 <h3>{{{ $product->name }}}</h3>
