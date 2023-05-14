@@ -10,10 +10,11 @@
 
 </head>
 <body>
-<h1>Каталог продуктов по категориям</h1>
+
+<h1>Список товаров</h1>
 <div class="tab">
 <?php foreach($categoryTree as $category): ?>
-	<button class="tablinks" onclick="openCategory(event, '<?php echo e($category->id); ?>')"><?php echo e($category->name); ?></button>
+	<button class="btn btn-link" onclick="openCategory(event, '<?php echo e($category->id); ?>')"><?php echo e($category->name); ?></button>
 <?php endforeach; ?>
 
 </div>

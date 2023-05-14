@@ -92,7 +92,8 @@ Route::group(
 Route::group(
     ['after' => ['no-cache']],
     function () {
-        Route::get('/', ['as' => 'home', 'uses' => 'App\Controllers\Client\HomePagesController@getPage']);
+      // Route::get('/', ['as' => 'home', 'uses' => 'App\Controllers\Client\HomePagesController@getPage']);
+        Route::get('/', ['as' => 'home', 'uses' => 'App\Controllers\Client\CatalogController@getIndex']);
         Route::get('404', ['as' => '404', 'uses' => 'App\Controllers\Client\ErrorsController@getError404']);
         //Privacy page
         Route::get('privacy', ['as' => 'privacy', 'uses' => 'App\Controllers\Client\PrivacyController@getPage']);
@@ -151,7 +152,8 @@ Route::group(
         );
 
         // Site map
-        Route::get('/map', ['as' => 'site_map', 'uses' => 'App\Controllers\Client\SiteMapController@getSiteMapPage']);
+        Route::get('/map', ['as' => 'home', 'uses' => 'App\Controllers\Client\CatalogController@getIndex']);
+//        Route::get('/map', ['as' => 'site_map', 'uses' => 'App\Controllers\Client\SiteMapController@getSiteMapPage']);
 
         // Measurement
         Route::controller(

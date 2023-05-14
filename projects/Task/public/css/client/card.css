@@ -2,7 +2,7 @@
 margin: auto;
 padding: 10px 10px 5px 10px;
 border: 1px solid #eee;
-background: white;
+background: #eff7ff;
 font-family: "Open Sans";
 overflow: hidden;
 transition: .4s linear;
@@ -35,7 +35,7 @@ font-size: 14px;
 line-height: 2;
 }
 .price {
-color: #E34D38;
+color: #333;
 display: block;
 margin-bottom: 12px;
 position: absolute;

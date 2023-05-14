@@ -8,10 +8,11 @@
 {{ Asset::includeJS('client_js') }}
 </head>
 <body>
-<h1>Каталог продуктов по категориям</h1>
+
+<h1>Список товаров</h1>
 <div class="tab">
 @foreach($categoryTree as $category)
-	<button class="tablinks" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
+	<button class="btn btn-link" onclick="openCategory(event, '{{{ $category->id }}}')">{{{ $category->name }}}</button>
 @endforeach
 
 </div>
