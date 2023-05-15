@@ -1,0 +1,13 @@
+<fieldset class="bordered-group" id="product-type-tabs">
+    <?php echo Form::tbLegend('Товары'); ?>
+
+
+    <div id="product-association-container" class="product-association-container">
+        <div class="">
+            <div class="checkbox-tree manual">
+                <?php echo $__env->make('admin.home_pages._catalog_tree', array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+            </div>
+        </div>
+
+    </div>
+</fieldset>

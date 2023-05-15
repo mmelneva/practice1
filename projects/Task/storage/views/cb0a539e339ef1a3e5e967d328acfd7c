@@ -1,0 +1,32 @@
+<ul>
+    <?php foreach($catalogTree as $category): ?>
+        <li class="group">
+            <input type="checkbox" class="group-checkbox" />
+            <span class="group-toggle"><?php echo e($category->name); ?></span>
+
+            <div class="group-content
+            <?php echo $errors->has() && is_array($oldAssociatedProducts = \Input::old("associated_products", []))
+             && count($oldAssociatedProducts) > 0 ? 'visible' : ''; ?>">
+                <?php if(count($category->children) > 0): ?>
+                    <?php echo $__env->make('admin.home_pages._catalog_tree', ['catalogTree' => $category->children], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                <?php endif; ?>
+
+                <?php if(count($category->products) > 0): ?>
+                    <ul>
+                        <?php foreach($category->products as $product): ?>
+                            <li>
+                                <?php echo Form::checkbox("associated_products[{$product->id}][manual]", 1, array_get($associations, $product->id), ['class' => 'element-checkbox']); ?>
+
+                                <span class="product-name" data-product-association-url="<?php echo e(action('App\Controllers\Admin\HomePagesController@getProductAssociationBlock', [$product->id, $homePage->id])); ?>"><?php echo e($product->name); ?></span>
+
+                                <?php if(\Input::old("associated_products.{$product->id}.opened")): ?>
+                                    <?php echo $__env->make('admin.product_type_pages._association_block', ['association' => array_get($associations, $product->id), 'productId' => $product->id, 'class' =>'visible'], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
+                                <?php endif; ?>
+                            </li>
+                        <?php endforeach; ?>
+                    </ul>
+                <?php endif; ?>
+            </div>
+        </li>
+    <?php endforeach; ?>
+</ul>

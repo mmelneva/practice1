@@ -1,12 +1,61 @@
 <!DOCTYPE html>
 <html lang="<?php echo str_replace('_', '-', app()->getLocale()); ?>">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Laravel</title>
+<?php echo Asset::includeCss('client_css'); ?>
 
-        <title>Laravel</title>
-    </head>
-    <body>
-        <h1>Hello world!</h1>
-    </body>
+<?php echo Asset::includeJS('client_js'); ?>
+
+</head>
+<body>
+<h1>каталог продуктов по категориям</h1>
+<div class="tab">
+<?php foreach($categoryTree as $category): ?>
+	<button class="tablinks" onclick="openCategory(event, '<?php echo e($category->id); ?>')"><?php echo e($category->name); ?></button>
+<?php endforeach; ?>
+
+</div>
+
+<div class="container">
+<div class="row">
+<div class="col-6 main">
+
+
+<?php foreach($products as $product): ?>
+<div class="product-item" name="<?php echo e($product->category_id); ?>">
+
+<!— <div class="product-img">
+<a href="">
+<img src="https://html5book.ru/wp-content/uploads/2015/10/black-dress.jpg">
+</a>
+</div> —>
+
+<div class="product-list">
+<?php if(strlen($product->name > 50)): ?>
+<h3><?php echo e(mb_substr($product->name, 0, 50)); ?>...</h3>
+<?php else: ?>
+<h3><?php echo e($product->name); ?></h3>
+<?php endif; ?>
+<div class="stars"></div>
+<span class="price"> ₽ <?php echo e($product->price); ?></span>
+<div class="actions">
+<div class="add-to-cart">
+<a href="" class="cart-button">В корзину</a>
+</div>
+<div class="add-to-links">
+<a href="" class="wishlist"></a>
+<a href="" class="compare"></a>
+</div>
+<div class="id_item">catId => <?php echo e($product->category_id); ?></div>
+</div>
+</div>
+</div>
+<?php endforeach; ?>
+</div>
+</div>
+</div>
+
+</body>
 </html>

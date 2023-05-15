@@ -1,0 +1,53 @@
+<?php /* Form fields for node */ ?>
+
+<?php echo Form::tbFormGroupOpen('parent_id'); ?>
+
+    <?php echo Form::tbLabel('parent_id', trans('validation.attributes.parent_id')); ?>
+
+    <?php echo Form::tbSelect('parent_id', $parentVariants); ?>
+
+<?php echo Form::tbFormGroupClose(); ?>
+
+
+
+<?php echo Form::tbFormGroupOpen('type'); ?>
+
+    <?php echo Form::tbLabel('type', trans('validation.attributes.type')); ?>
+
+    <select id="type" name="type" class="form-control" data-node-type>
+        <?php foreach(TypeContainer::getEnabledTypeList($node->id) as $typeKey => $type): ?>
+            <option value="<?php echo e($typeKey); ?>" data-unique="<?php echo e($type->getUnique()); ?>" <?php echo Input::old('type', $node->type) == $typeKey ? 'selected="selected"' : ''; ?>><?php echo $type->getName(); ?></option>
+        <?php endforeach; ?>
+    </select>
+<?php echo Form::tbFormGroupClose(); ?>
+
+
+<?php echo Form::tbFormGroupOpen('name'); ?>
+
+    <?php echo Form::tbLabel('name', trans('validation.attributes.name')); ?>
+
+    <?php echo Form::tbText('name'); ?>
+
+<?php echo Form::tbFormGroupClose(); ?>
+
+
+<?php echo Form::tbFormGroupOpen('alias'); ?>
+
+    <?php echo Form::tbLabel('alias', trans('validation.attributes.alias')); ?>
+
+    <?php echo Form::tbText('alias'); ?>
+
+<?php echo Form::tbFormGroupClose(); ?>
+
+
+<?php echo Form::tbCheckboxBlock('publish'); ?>
+
+<?php echo Form::tbCheckboxBlock('menu_top'); ?>
+
+<?php echo Form::tbCheckboxBlock('hide_regions_in_page'); ?>
+
+
+<?php /*<?php echo Form::tbCheckboxBlock('scrolled_menu_top'); ?>*/ ?>
+<?php /*<?php echo Form::tbCheckboxBlock('menu_bottom'); ?>*/ ?>
+
+<?php echo $__env->make('admin.shared._model_timestamps', ['model' => $node], array_except(get_defined_vars(), array('__data', '__path')))->render(); ?>
