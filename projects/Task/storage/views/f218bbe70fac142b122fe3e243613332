@@ -41,9 +41,9 @@
 <?php else: ?>
 <h3><?php echo e($product->name); ?></h3>
 <?php endif; ?>
-<div class="stars"></div>
+<!--<div class="stars"></div>-->
 <span class="price"> ₽ <?php echo e($product->price); ?></span>
-<div class="actions">
+<!--<div class="actions">
 <div class="add-to-cart">
 <a href="" class="cart-button">В корзину</a>
 </div>
@@ -52,7 +52,7 @@
 <a href="" class="compare"></a>
 </div>
 <div class="id_item">catId => <?php echo e($product->category_id); ?></div>
-</div>
+</div>-->
 </div>
 </div>
 <?php endforeach; ?>

@@ -39,9 +39,9 @@
 @else
 <h3>{{{ $product->name }}}</h3>
 @endif
-<div class="stars"></div>
+<!--<div class="stars"></div>-->
 <span class="price"> ₽ {{{ $product->price }}}</span>
-<div class="actions">
+<!--<div class="actions">
 <div class="add-to-cart">
 <a href="" class="cart-button">В корзину</a>
 </div>
@@ -50,7 +50,7 @@
 <a href="" class="compare"></a>
 </div>
 <div class="id_item">catId => {{{ $product->category_id }}}</div>
-</div>
+</div>-->
 </div>
 </div>
 @endforeach
